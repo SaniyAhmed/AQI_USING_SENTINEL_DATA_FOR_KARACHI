@@ -1,0 +1,1134 @@
+Phase 2: 2022-01-01 -> 2026-09-25 in 5 yearly chunk(s)
+
+======================================================================
+  step1_check_gee.py 
+======================================================================
+Earth Engine connection problem (ConnectionError); retrying in 10s ...
+*** Earth Engine *** Share your feedback by taking our Annual Developer Satisfaction Survey: https://google.qualtrics.com/jfe/form/SV_9oS0DRcPvElRMNw?source=python
+[1/3] Connected to Earth Engine (project: green-cover-karachi)
+[2/3] Checking datasets over Karachi ...
+  OK  COPERNICUS/S5P/OFFL/L3_NO2       2018-06-28 -> 2026-09-16
+  OK  COPERNICUS/S5P/NRTI/L3_NO2       2018-07-11 -> 2026-09-26
+  OK  COPERNICUS/S5P/OFFL/L3_O3        2018-09-08 -> 2026-09-23
+  OK  COPERNICUS/S5P/NRTI/L3_O3        2018-07-19 -> 2026-09-25
+  OK  COPERNICUS/S5P/OFFL/L3_SO2       2018-11-28 -> 2026-09-23
+  OK  COPERNICUS/S5P/NRTI/L3_SO2       2018-10-02 -> 2026-09-25
+  OK  COPERNICUS/S5P/OFFL/L3_CO        2018-07-04 -> 2026-09-23
+  OK  COPERNICUS/S5P/NRTI/L3_CO        2018-11-22 -> 2026-09-26
+  OK  COPERNICUS/S5P/OFFL/L3_AER_AI    2018-06-28 -> 2026-09-23
+  OK  COPERNICUS/S5P/NRTI/L3_AER_AI    2018-07-11 -> 2026-09-26
+  OK  MODIS/061/MCD19A2_GRANULES       2000-02-24 -> 2026-09-21
+  OK  COPERNICUS/S2_SR_HARMONIZED      2015-11-29 -> 2026-09-24
+  OK  GOOGLE/DYNAMICWORLD/V1           2015-11-29 -> 2026-09-24
+[3/3] Checking grid alignment ...
+  Largest difference between Earth Engine and Phase 1 cell centres: 0.42 m
+
+All checks passed. Earth Engine is ready.
+
+======================================================================
+  step2_sentinel2_landcover.py 
+======================================================================
+Sentinel-2 monthly composites: 2021-01 -> 2026-08 (68 months, cached months are reused)
+  2021-03: cells with enough clear sky: 100%
+  2021-02: cells with enough clear sky: 100%
+  2021-01: cells with enough clear sky: 100%
+  2021-05: cells with enough clear sky: 100%
+  2021-04: cells with enough clear sky: 100%
+  2021-06: cells with enough clear sky: 100%
+  2021-07: cells with enough clear sky: 97%
+  2021-09: cells with enough clear sky: 100%
+  2021-08: cells with enough clear sky: 100%
+  2021-11: cells with enough clear sky: 100%
+  2021-10: cells with enough clear sky: 100%
+  2021-12: cells with enough clear sky: 100%
+  2022-02: cells with enough clear sky: 100%
+  2022-01: cells with enough clear sky: 100%
+  2022-03: cells with enough clear sky: 100%
+  2022-06: cells with enough clear sky: 100%
+  2022-04: cells with enough clear sky: 100%  2022-05: cells with enough clear sky: 100%
+
+  2022-07: cells with enough clear sky: 91%
+  2022-09: cells with enough clear sky: 100%
+  2022-08: cells with enough clear sky: 88%
+  2022-11: cells with enough clear sky: 100%
+  2022-10: cells with enough clear sky: 100%
+  2022-12: cells with enough clear sky: 100%
+  2023-02: cells with enough clear sky: 100%
+  2023-01: cells with enough clear sky: 100%  2023-03: cells with enough clear sky: 100%
+
+  2023-04: cells with enough clear sky: 100%
+  2023-05: cells with enough clear sky: 100%
+  2023-06: cells with enough clear sky: 100%
+  2023-07: cells with enough clear sky: 95%
+  2023-08: cells with enough clear sky: 84%
+  2023-09: cells with enough clear sky: 100%
+  2023-10: cells with enough clear sky: 100%
+  2023-11: cells with enough clear sky: 100%
+  2023-12: cells with enough clear sky: 100%
+  2024-01: cells with enough clear sky: 100%
+  2024-02: cells with enough clear sky: 100%
+  2024-03: cells with enough clear sky: 100%
+  2024-04: cells with enough clear sky: 100%
+  2024-05: cells with enough clear sky: 100%
+  2024-06: cells with enough clear sky: 100%
+  2024-07: cells with enough clear sky: 91%
+  2024-08: cells with enough clear sky: 81%
+  2024-10: cells with enough clear sky: 100%
+  2024-09: cells with enough clear sky: 100%
+  2024-11: cells with enough clear sky: 100%
+  2024-12: cells with enough clear sky: 100%
+  2025-02: cells with enough clear sky: 100%  2025-03: cells with enough clear sky: 100%
+
+  2025-01: cells with enough clear sky: 100%
+  2025-05: cells with enough clear sky: 100%
+  2025-04: cells with enough clear sky: 100%
+  2025-06: cells with enough clear sky: 100%
+  2025-08: cells with enough clear sky: 100%
+  2025-07: cells with enough clear sky: 90%
+  2025-09: cells with enough clear sky: 100%
+  2025-10: cells with enough clear sky: 100%
+  2025-11: cells with enough clear sky: 100%
+  2025-12: cells with enough clear sky: 100%
+  2026-01: cells with enough clear sky: 100%
+  2026-02: cells with enough clear sky: 100%
+  2026-03: cells with enough clear sky: 100%
+  2026-04: cells with enough clear sky: 100%
+  2026-05: cells with enough clear sky: 100%
+  2026-06: cells with enough clear sky: 100%
+  2026-07: cells with enough clear sky: 96%
+  2026-08: cells with enough clear sky: 70%
+
+District averages over all months:
+                  ndvi   ndbi  built_pct  clear_fraction  valid_fraction  filled_fraction
+district                                                                                 
+Karachi Central  0.093  0.067     41.429           0.962             1.0            0.038
+Karachi East     0.173  0.057     48.616           0.976             1.0            0.024
+Karachi South    0.148  0.085     15.025           0.940             1.0            0.060
+Karachi West     0.155  0.079     22.575           0.969             1.0            0.031
+Korangi          0.156  0.045     32.969           0.976             1.0            0.024
+Malir            0.175  0.087      7.118           0.995             1.0            0.005
+
+Saved D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\district_monthly\sentinel2.csv
+      D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\district_daily\landcover.csv
+      D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\sentinel2
+      D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\grid\built_fraction_1000m.tif
+
+##### Chunk 1/5: 2022-01-01 -> 2022-12-31 #####
+
+======================================================================
+  step3_sentinel5p.py --start 2022-01-01 --end 2022-12-31
+======================================================================
+
+=== NO2 (Sentinel-5P: Tropospheric NO2 column) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-01: 31 days, 88% of grid cells observed
+    2021-12: 31 days, 87% of grid cells observed
+    2022-03: 31 days, 99% of grid cells observed
+    2022-07: 31 days, 40% of grid cells observed
+    2022-05: 31 days, 99% of grid cells observed
+    2022-02: 28 days, 97% of grid cells observed
+    2022-04: 30 days, 100% of grid cells observed
+    2022-06: 30 days, 94% of grid cells observed
+    2022-08: 31 days, 32% of grid cells observed
+    2022-09: 30 days, 84% of grid cells observed
+    2022-10: 31 days, 100% of grid cells observed
+    2022-11: 30 days, 96% of grid cells observed
+    2022-12: 31 days, 99% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.82            0.98              360
+Karachi East                  0.82            0.98              360
+Karachi South                 0.80            0.98              363
+Karachi West                  0.82            0.98              361
+Korangi                       0.85            0.97              357
+Malir                         0.84            0.98              363
+  Saved no2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\no2
+
+=== O3 (Sentinel-5P: Total O3 column (Dobson Units)) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2021-12: 31 days, 73% of grid cells observed
+    2022-03: 31 days, 97% of grid cells observed
+    2022-01: 31 days, 85% of grid cells observed
+    2022-02: 28 days, 96% of grid cells observed
+    2022-04: 30 days, 99% of grid cells observed
+    2022-05: 31 days, 99% of grid cells observed
+    2022-07: 31 days, 32% of grid cells observed
+    2022-06: 30 days, 89% of grid cells observed
+    2022-08: 31 days, 31% of grid cells observed
+    2022-09: 30 days, 83% of grid cells observed
+    2022-10: 31 days, 99% of grid cells observed
+    2022-11: 30 days, 93% of grid cells observed
+    2022-12: 31 days, 98% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.77            0.97              359
+Karachi East                  0.78            0.97              358
+Karachi South                 0.80            0.98              363
+Karachi West                  0.79            0.97              359
+Korangi                       0.79            0.97              358
+Malir                         0.81            0.97              362
+  Saved o3.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\o3
+
+=== SO2 (Sentinel-5P: SO2 column (noisy: values below 0 are normal)) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-02: 28 days, 94% of grid cells observed
+    2021-12: 31 days, 70% of grid cells observed
+    2022-01: 31 days, 81% of grid cells observed    2022-07: 31 days, 34% of grid cells observed
+
+    2022-03: 31 days, 97% of grid cells observed
+    2022-04: 30 days, 99% of grid cells observed
+    2022-05: 31 days, 99% of grid cells observed
+    2022-06: 30 days, 90% of grid cells observed
+    2022-08: 31 days, 32% of grid cells observed
+    2022-11: 30 days, 92% of grid cells observed
+    2022-09: 30 days, 84% of grid cells observed
+    2022-10: 31 days, 99% of grid cells observed
+    2022-12: 31 days, 94% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.77            0.96              357
+Karachi East                  0.77            0.96              358
+Karachi South                 0.80            0.97              363
+Karachi West                  0.79            0.96              359
+Korangi                       0.79            0.97              358
+Malir                         0.81            0.97              362
+  Saved so2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\so2
+
+=== CO (Sentinel-5P: CO column) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-01: 31 days, 61% of grid cells observed    2022-04: 30 days, 66% of grid cells observed
+
+    2022-03: 31 days, 60% of grid cells observed
+    2022-07: 31 days, 55% of grid cells observed
+    2022-05: 31 days, 55% of grid cells observed
+    2022-02: 28 days, 70% of grid cells observed
+    2022-06: 30 days, 69% of grid cells observed    2021-12: 31 days, 60% of grid cells observed
+
+    2022-08: 31 days, 46% of grid cells observed
+    2022-11: 30 days, 58% of grid cells observed
+    2022-10: 31 days, 58% of grid cells observed
+    2022-12: 31 days, 62% of grid cells observed
+    2022-09: 30 days, 71% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.56             1.0              365
+Karachi East                  0.54             1.0              365
+Karachi South                 0.67             1.0              365
+Karachi West                  0.62             1.0              365
+Korangi                       0.60             1.0              365
+Malir                         0.63             1.0              365
+  Saved co.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\co
+
+=== AER_AI (Sentinel-5P: UV absorbing aerosol index (dust/smoke)) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-02: 28 days, 100% of grid cells observed
+    2021-12: 31 days, 100% of grid cells observed
+    2022-04: 30 days, 96% of grid cells observed
+    2022-07: 31 days, 96% of grid cells observed    2022-01: 31 days, 100% of grid cells observed
+    2022-03: 31 days, 97% of grid cells observed
+
+    2022-06: 30 days, 97% of grid cells observed
+    2022-05: 31 days, 96% of grid cells observed
+    2022-11: 30 days, 100% of grid cells observed
+    2022-10: 31 days, 98% of grid cells observed    2022-09: 30 days, 97% of grid cells observed
+
+    2022-12: 31 days, 100% of grid cells observed
+    2022-08: 31 days, 96% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central                1.0             1.0              365
+Karachi East                   1.0             1.0              365
+Karachi South                  1.0             1.0              365
+Karachi West                   1.0             1.0              365
+Korangi                        1.0             1.0              365
+Malir                          1.0             1.0              365
+  Saved aer_ai.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aer_ai
+
+======================================================================
+  step4_modis_aod.py --start 2022-01-01 --end 2022-12-31
+======================================================================
+
+=== AOD (MODIS MAIAC: Aerosol optical depth at 550 nm (best-quality, clear-sky)) 2022-01-01 -> 2022-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-07: 31 days, 1% of grid cells observed
+    2022-01: 31 days, 63% of grid cells observed
+    2021-12: 31 days, 55% of grid cells observed
+    2022-02: 28 days, 71% of grid cells observed
+    2022-06: 30 days, 43% of grid cells observed
+    2022-04: 30 days, 69% of grid cells observed
+    2022-03: 31 days, 73% of grid cells observed
+    2022-05: 31 days, 71% of grid cells observed
+    2022-08: 31 days, 3% of grid cells observed
+    2022-09: 30 days, 34% of grid cells observed
+    2022-11: 30 days, 64% of grid cells observed
+    2022-12: 31 days, 75% of grid cells observed
+    2022-10: 31 days, 68% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.66            0.81              316
+Karachi East                  0.62            0.80              311
+Karachi South                 0.61            0.84              334
+Karachi West                  0.65            0.81              320
+Korangi                       0.60            0.82              313
+Malir                         0.64            0.82              342
+  Saved aod.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aod
+##### Chunk 1/5 done in 1.2 min #####
+
+##### Chunk 2/5: 2023-01-01 -> 2023-12-31 #####
+
+======================================================================
+  step3_sentinel5p.py --start 2023-01-01 --end 2023-12-31
+======================================================================
+
+=== NO2 (Sentinel-5P: Tropospheric NO2 column) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-01: 31 days, 96% of grid cells observed
+    2022-12: 31 days, 99% of grid cells observed
+    2023-03: 31 days, 91% of grid cells observed
+    2023-02: 28 days, 100% of grid cells observed
+    2023-04: 30 days, 84% of grid cells observed
+    2023-06: 30 days, 71% of grid cells observed
+    2023-07: 31 days, 61% of grid cells observed
+    2023-05: 31 days, 88% of grid cells observed
+    2023-08: 31 days, 42% of grid cells observed
+    2023-09: 30 days, 81% of grid cells observed
+    2023-10: 31 days, 91% of grid cells observed
+    2023-11: 30 days, 92% of grid cells observed
+    2023-12: 31 days, 97% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.78            0.96              352
+Karachi East                  0.79            0.96              355
+Karachi South                 0.80            0.97              361
+Karachi West                  0.79            0.96              352
+Korangi                       0.81            0.97              354
+Malir                         0.81            0.97              364
+  Saved no2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\no2
+
+=== O3 (Sentinel-5P: Total O3 column (Dobson Units)) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-01: 31 days, 96% of grid cells observed
+    2022-12: 31 days, 98% of grid cells observed
+    2023-02: 28 days, 100% of grid cells observed
+    2023-07: 31 days, 61% of grid cells observed
+    2023-06: 30 days, 78% of grid cells observed    2023-04: 30 days, 80% of grid cells observed    2023-03: 31 days, 86% of grid cells observed
+
+
+    2023-05: 31 days, 95% of grid cells observed
+    2023-08: 31 days, 41% of grid cells observed
+    2023-11: 30 days, 86% of grid cells observed
+    2023-09: 30 days, 80% of grid cells observed
+    2023-10: 31 days, 88% of grid cells observed
+    2023-12: 31 days, 99% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.77            0.96              356
+Karachi East                  0.77            0.96              359
+Karachi South                 0.80            0.98              364
+Karachi West                  0.78            0.96              356
+Korangi                       0.79            0.97              360
+Malir                         0.81            0.97              365
+  Saved o3.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\o3
+
+=== SO2 (Sentinel-5P: SO2 column (noisy: values below 0 are normal)) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-12: 31 days, 94% of grid cells observed
+    2023-04: 30 days, 81% of grid cells observed    2023-02: 28 days, 98% of grid cells observed
+
+    2023-07: 31 days, 62% of grid cells observed    2023-03: 31 days, 86% of grid cells observed
+
+    2023-05: 31 days, 95% of grid cells observed
+    2023-06: 30 days, 80% of grid cells observed
+    2023-01: 31 days, 92% of grid cells observed
+    2023-08: 31 days, 43% of grid cells observed
+    2023-09: 30 days, 81% of grid cells observed
+    2023-10: 31 days, 89% of grid cells observed
+    2023-11: 30 days, 84% of grid cells observed
+    2023-12: 31 days, 92% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.76            0.96              353
+Karachi East                  0.77            0.96              356
+Karachi South                 0.80            0.97              363
+Karachi West                  0.78            0.96              353
+Korangi                       0.79            0.97              356
+Malir                         0.80            0.97              365
+  Saved so2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\so2
+
+=== CO (Sentinel-5P: CO column) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-03: 31 days, 59% of grid cells observed
+    2023-01: 31 days, 59% of grid cells observed
+    2022-12: 31 days, 62% of grid cells observed
+    2023-04: 30 days, 54% of grid cells observed
+    2023-02: 28 days, 65% of grid cells observed
+    2023-05: 31 days, 68% of grid cells observed
+    2023-07: 31 days, 67% of grid cells observed
+    2023-06: 30 days, 66% of grid cells observed
+    2023-09: 30 days, 59% of grid cells observed
+    2023-08: 31 days, 60% of grid cells observed
+    2023-11: 30 days, 52% of grid cells observed
+    2023-12: 31 days, 59% of grid cells observed    2023-10: 31 days, 63% of grid cells observed
+
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.54             1.0              365
+Karachi East                  0.52             1.0              365
+Karachi South                 0.66             1.0              365
+Karachi West                  0.58             1.0              365
+Korangi                       0.60             1.0              365
+Malir                         0.64             1.0              365
+  Saved co.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\co
+
+=== AER_AI (Sentinel-5P: UV absorbing aerosol index (dust/smoke)) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2022-12: 31 days, 100% of grid cells observed    2023-03: 31 days, 97% of grid cells observed
+
+    2023-02: 28 days, 100% of grid cells observed
+    2023-01: 31 days, 100% of grid cells observed
+    2023-06: 30 days, 96% of grid cells observed    2023-04: 30 days, 97% of grid cells observed
+
+    2023-07: 31 days, 96% of grid cells observed
+    2023-05: 31 days, 96% of grid cells observed
+    2023-09: 30 days, 97% of grid cells observed
+    2023-08: 31 days, 97% of grid cells observed
+    2023-10: 31 days, 97% of grid cells observed
+    2023-11: 30 days, 100% of grid cells observed
+    2023-12: 31 days, 100% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central                1.0             1.0              365
+Karachi East                   1.0             1.0              365
+Karachi South                  1.0             1.0              365
+Karachi West                   1.0             1.0              365
+Korangi                        1.0             1.0              365
+Malir                          1.0             1.0              365
+  Saved aer_ai.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aer_ai
+
+======================================================================
+  step4_modis_aod.py --start 2023-01-01 --end 2023-12-31
+======================================================================
+
+=== AOD (MODIS MAIAC: Aerosol optical depth at 550 nm (best-quality, clear-sky)) 2023-01-01 -> 2023-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-03: 31 days, 53% of grid cells observed
+    2023-04: 30 days, 43% of grid cells observed    2023-01: 31 days, 69% of grid cells observed
+
+    2022-12: 31 days, 75% of grid cells observed
+    2023-07: 31 days, 14% of grid cells observed
+    2023-06: 30 days, 21% of grid cells observed
+    2023-05: 31 days, 51% of grid cells observed
+    2023-02: 28 days, 70% of grid cells observed
+    2023-08: 31 days, 12% of grid cells observed
+    2023-10: 31 days, 52% of grid cells observed
+    2023-09: 30 days, 40% of grid cells observed
+    2023-11: 30 days, 64% of grid cells observed
+    2023-12: 31 days, 71% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.58            0.80              318
+Karachi East                  0.57            0.79              320
+Karachi South                 0.52            0.82              342
+Karachi West                  0.56            0.78              325
+Korangi                       0.54            0.78              309
+Malir                         0.57            0.82              355
+  Saved aod.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aod
+##### Chunk 2/5 done in 1.2 min #####
+
+##### Chunk 3/5: 2024-01-01 -> 2024-12-31 #####
+
+======================================================================
+  step3_sentinel5p.py --start 2024-01-01 --end 2024-12-31
+======================================================================
+
+=== NO2 (Sentinel-5P: Tropospheric NO2 column) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-12: 31 days, 97% of grid cells observed
+    2024-02: 29 days, 74% of grid cells observed
+    2024-04: 30 days, 80% of grid cells observed
+    2024-03: 31 days, 85% of grid cells observed
+    2024-01: 31 days, 90% of grid cells observed
+    2024-07: 31 days, 53% of grid cells observed
+    2024-06: 30 days, 93% of grid cells observed
+    2024-05: 31 days, 95% of grid cells observed
+    2024-08: 31 days, 39% of grid cells observed
+    2024-09: 30 days, 84% of grid cells observed
+    2024-10: 31 days, 91% of grid cells observed
+    2024-11: 30 days, 97% of grid cells observed
+    2024-12: 31 days, 98% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.78            0.99              363
+Karachi East                  0.79            0.98              365
+Karachi South                 0.80            0.99              363
+Karachi West                  0.78            0.99              363
+Korangi                       0.82            0.98              364
+Malir                         0.81            0.98              366
+  Saved no2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\no2
+
+=== O3 (Sentinel-5P: Total O3 column (Dobson Units)) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-01: 31 days, 89% of grid cells observed
+    2024-02: 29 days, 74% of grid cells observed
+    2023-12: 31 days, 99% of grid cells observed
+    2024-04: 30 days, 76% of grid cells observed
+    2024-07: 31 days, 42% of grid cells observed
+    2024-05: 31 days, 95% of grid cells observed
+    2024-06: 30 days, 87% of grid cells observed
+    2024-03: 31 days, 83% of grid cells observed
+    2024-08: 31 days, 31% of grid cells observed
+    2024-09: 30 days, 82% of grid cells observed
+    2024-10: 31 days, 90% of grid cells observed
+    2024-11: 30 days, 97% of grid cells observed
+    2024-12: 31 days, 98% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.74            0.98              363
+Karachi East                  0.75            0.97              363
+Karachi South                 0.76            0.99              363
+Karachi West                  0.74            0.98              363
+Korangi                       0.77            0.98              361
+Malir                         0.77            0.97              364
+  Saved o3.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\o3
+
+=== SO2 (Sentinel-5P: SO2 column (noisy: values below 0 are normal)) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-12: 31 days, 92% of grid cells observed
+    2024-04: 30 days, 76% of grid cells observed
+    2024-03: 31 days, 82% of grid cells observed
+    2024-01: 31 days, 84% of grid cells observed    2024-07: 31 days, 44% of grid cells observed
+    2024-05: 31 days, 95% of grid cells observed
+
+    2024-02: 29 days, 73% of grid cells observed    2024-06: 30 days, 88% of grid cells observed
+
+    2024-08: 31 days, 32% of grid cells observed
+    2024-09: 30 days, 83% of grid cells observed
+    2024-10: 31 days, 90% of grid cells observed
+    2024-12: 31 days, 96% of grid cells observed    2024-11: 30 days, 96% of grid cells observed
+
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.74            0.97              363
+Karachi East                  0.75            0.97              362
+Karachi South                 0.76            0.98              363
+Karachi West                  0.74            0.97              363
+Korangi                       0.77            0.97              361
+Malir                         0.77            0.96              364
+  Saved so2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\so2
+
+=== CO (Sentinel-5P: CO column) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-02: 29 days, 51% of grid cells observed
+    2023-12: 31 days, 59% of grid cells observed
+    2024-03: 31 days, 56% of grid cells observed
+    2024-05: 31 days, 65% of grid cells observed
+    2024-04: 30 days, 48% of grid cells observed
+    2024-01: 31 days, 59% of grid cells observed
+    2024-06: 30 days, 70% of grid cells observed
+    2024-07: 31 days, 54% of grid cells observed
+    2024-08: 31 days, 52% of grid cells observed
+    2024-11: 30 days, 64% of grid cells observed
+    2024-09: 30 days, 79% of grid cells observed
+    2024-10: 31 days, 56% of grid cells observed
+    2024-12: 31 days, 63% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.57            1.00              365
+Karachi East                  0.54            1.00              365
+Karachi South                 0.65            0.99              365
+Karachi West                  0.63            1.00              365
+Korangi                       0.60            1.00              365
+Malir                         0.64            1.00              366
+  Saved co.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\co
+
+=== AER_AI (Sentinel-5P: UV absorbing aerosol index (dust/smoke)) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2023-12: 31 days, 100% of grid cells observed
+    2024-04: 30 days, 96% of grid cells observed
+    2024-02: 29 days, 99% of grid cells observed
+    2024-01: 31 days, 100% of grid cells observed
+    2024-03: 31 days, 94% of grid cells observed
+    2024-07: 31 days, 96% of grid cells observed
+    2024-05: 31 days, 96% of grid cells observed
+    2024-06: 30 days, 96% of grid cells observed
+    2024-08: 31 days, 96% of grid cells observed
+    2024-10: 31 days, 98% of grid cells observed
+    2024-09: 30 days, 94% of grid cells observed
+    2024-11: 30 days, 100% of grid cells observed
+    2024-12: 31 days, 100% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.99             1.0              366
+Karachi East                  0.99             1.0              366
+Karachi South                 0.99             1.0              366
+Karachi West                  0.99             1.0              366
+Korangi                       0.99             1.0              366
+Malir                         0.99             1.0              366
+  Saved aer_ai.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aer_ai
+
+======================================================================
+  step4_modis_aod.py --start 2024-01-01 --end 2024-12-31
+======================================================================
+
+=== AOD (MODIS MAIAC: Aerosol optical depth at 550 nm (best-quality, clear-sky)) 2024-01-01 -> 2024-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-07: 31 days, 4% of grid cells observed    2024-02: 29 days, 47% of grid cells observed
+
+    2024-04: 30 days, 42% of grid cells observed    2023-12: 31 days, 71% of grid cells observed
+
+    2024-06: 30 days, 34% of grid cells observed
+    2024-01: 31 days, 50% of grid cells observed
+    2024-05: 31 days, 62% of grid cells observed
+    2024-03: 31 days, 54% of grid cells observed
+    2024-08: 31 days, 4% of grid cells observed
+    2024-09: 30 days, 40% of grid cells observed
+    2024-10: 31 days, 61% of grid cells observed
+    2024-12: 31 days, 74% of grid cells observed
+    2024-11: 30 days, 73% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.60            0.81              316
+Karachi East                  0.58            0.80              316
+Karachi South                 0.52            0.82              348
+Karachi West                  0.58            0.81              323
+Korangi                       0.53            0.78              309
+Malir                         0.56            0.81              347
+  Saved aod.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aod
+##### Chunk 3/5 done in 1.2 min #####
+
+##### Chunk 4/5: 2025-01-01 -> 2025-12-31 #####
+
+======================================================================
+  step3_sentinel5p.py --start 2025-01-01 --end 2025-12-31
+======================================================================
+
+=== NO2 (Sentinel-5P: Tropospheric NO2 column) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2025-01: 31 days, 97% of grid cells observed
+    2024-12: 31 days, 98% of grid cells observed
+    2025-02: 28 days, 86% of grid cells observed
+    2025-07: 31 days, 47% of grid cells observed
+    2025-03: 31 days, 99% of grid cells observed    2025-06: 30 days, 78% of grid cells observed
+
+    2025-04: 30 days, 100% of grid cells observed
+    2025-05: 31 days, 99% of grid cells observed
+    2025-09: 30 days, 55% of grid cells observed
+    2025-08: 31 days, 49% of grid cells observed
+    2025-10: 31 days, 66% of grid cells observed
+    2025-11: 30 days, 93% of grid cells observed
+    2025-12: 31 days, 90% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.75            0.96              356
+Karachi East                  0.75            0.96              357
+Karachi South                 0.76            0.98              361
+Karachi West                  0.75            0.96              356
+Korangi                       0.79            0.97              358
+Malir                         0.79            0.96              361
+  Saved no2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\no2
+
+=== O3 (Sentinel-5P: Total O3 column (Dobson Units)) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2025-01: 31 days, 97% of grid cells observed
+    2024-12: 31 days, 98% of grid cells observed
+    2025-07: 31 days, 42% of grid cells observed
+    2025-05: 31 days, 99% of grid cells observed    2025-02: 28 days, 85% of grid cells observed
+
+    2025-04: 30 days, 100% of grid cells observed
+    2025-06: 30 days, 76% of grid cells observed
+    2025-03: 31 days, 98% of grid cells observed
+    2025-08: 31 days, 44% of grid cells observed
+    2025-09: 30 days, 53% of grid cells observed
+    2025-10: 31 days, 84% of grid cells observed
+    2025-11: 30 days, 80% of grid cells observed
+    2025-12: 31 days, 88% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.72            0.95              353
+Karachi East                  0.73            0.95              354
+Karachi South                 0.75            0.97              358
+Karachi West                  0.74            0.94              354
+Korangi                       0.75            0.96              355
+Malir                         0.78            0.96              358
+  Saved o3.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\o3
+
+=== SO2 (Sentinel-5P: SO2 column (noisy: values below 0 are normal)) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2025-02: 28 days, 85% of grid cells observed
+    2024-12: 31 days, 96% of grid cells observed    2025-01: 31 days, 95% of grid cells observed
+    2025-06: 30 days, 76% of grid cells observed
+
+    2025-07: 31 days, 44% of grid cells observed    2025-04: 30 days, 100% of grid cells observed
+
+    2025-05: 31 days, 99% of grid cells observed
+    2025-03: 31 days, 98% of grid cells observed
+    2025-08: 31 days, 46% of grid cells observed
+    2025-09: 30 days, 55% of grid cells observed
+    2025-10: 31 days, 94% of grid cells observed
+    2025-12: 31 days, 87% of grid cells observed    2025-11: 30 days, 100% of grid cells observed
+
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.75            0.96              359
+Karachi East                  0.76            0.96              360
+Karachi South                 0.78            0.98              364
+Karachi West                  0.77            0.95              359
+Korangi                       0.78            0.98              360
+Malir                         0.80            0.97              364
+  Saved so2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\so2
+
+=== CO (Sentinel-5P: CO column) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-12: 31 days, 63% of grid cells observed
+    2025-02: 28 days, 53% of grid cells observed
+    2025-01: 31 days, 67% of grid cells observed
+    2025-07: 31 days, 59% of grid cells observed
+    2025-04: 30 days, 69% of grid cells observed
+    2025-06: 30 days, 69% of grid cells observed
+    2025-05: 31 days, 70% of grid cells observed
+    2025-03: 31 days, 72% of grid cells observed
+    2025-11: 30 days, 62% of grid cells observed    2025-08: 31 days, 57% of grid cells observed
+
+    2025-09: 30 days, 61% of grid cells observed
+    2025-10: 31 days, 53% of grid cells observed
+    2025-12: 31 days, 60% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.58             1.0              365
+Karachi East                  0.56             1.0              365
+Karachi South                 0.67             1.0              365
+Karachi West                  0.62             1.0              365
+Korangi                       0.60             1.0              365
+Malir                         0.66             1.0              365
+  Saved co.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\co
+
+=== AER_AI (Sentinel-5P: UV absorbing aerosol index (dust/smoke)) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-12: 31 days, 100% of grid cells observed
+    2025-03: 31 days, 97% of grid cells observed    2025-02: 28 days, 99% of grid cells observed
+
+    2025-04: 30 days, 96% of grid cells observed
+    2025-01: 31 days, 100% of grid cells observed
+    2025-05: 31 days, 96% of grid cells observed
+    2025-06: 30 days, 95% of grid cells observed
+    2025-07: 31 days, 96% of grid cells observed
+    2025-09: 30 days, 96% of grid cells observed
+    2025-10: 31 days, 97% of grid cells observed
+    2025-08: 31 days, 96% of grid cells observed
+    2025-12: 31 days, 100% of grid cells observed
+    2025-11: 30 days, 100% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central                1.0             1.0              365
+Karachi East                   1.0             1.0              365
+Karachi South                  1.0             1.0              365
+Karachi West                   1.0             1.0              365
+Korangi                        1.0             1.0              365
+Malir                          1.0             1.0              365
+  Saved aer_ai.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aer_ai
+
+======================================================================
+  step4_modis_aod.py --start 2025-01-01 --end 2025-12-31
+======================================================================
+
+=== AOD (MODIS MAIAC: Aerosol optical depth at 550 nm (best-quality, clear-sky)) 2025-01-01 -> 2025-12-31 ===
+  Fetching 13 month(s) from Earth Engine ...
+    2024-12: 31 days, 74% of grid cells observed
+    2025-07: 31 days, 3% of grid cells observed
+    2025-02: 28 days, 54% of grid cells observed    2025-06: 30 days, 32% of grid cells observed
+
+    2025-01: 31 days, 70% of grid cells observed
+    2025-03: 31 days, 68% of grid cells observed
+    2025-04: 30 days, 72% of grid cells observed    2025-05: 31 days, 62% of grid cells observed
+
+    2025-08: 31 days, 11% of grid cells observed
+    2025-09: 30 days, 17% of grid cells observed
+    2025-12: 31 days, 57% of grid cells observed
+    2025-11: 30 days, 77% of grid cells observed
+    2025-10: 31 days, 63% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.64            0.80              307
+Karachi East                  0.63            0.80              311
+Karachi South                 0.56            0.82              348
+Karachi West                  0.62            0.80              319
+Korangi                       0.59            0.79              305
+Malir                         0.61            0.81              353
+  Saved aod.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aod
+##### Chunk 4/5 done in 1.1 min #####
+
+##### Chunk 5/5: 2026-01-01 -> 2026-09-25 #####
+
+======================================================================
+  step3_sentinel5p.py --start 2026-01-01 --end 2026-09-25
+======================================================================
+
+=== NO2 (Sentinel-5P: Tropospheric NO2 column) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 90% of grid cells observed
+    2026-02: 28 days, 97% of grid cells observed
+    2026-03: 31 days, 88% of grid cells observed
+    2026-06: 30 days, 86% of grid cells observed
+    2026-07: 31 days, 64% of grid cells observed
+    2026-01: 31 days, 91% of grid cells observed
+    2026-05: 31 days, 99% of grid cells observed
+    2026-04: 30 days, 93% of grid cells observed
+    2026-08: 31 days, 50% of grid cells observed
+    2026-09: 25 days, 77% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.76            0.97              260
+Karachi East                  0.77            0.97              264
+Karachi South                 0.76            0.97              265
+Karachi West                  0.75            0.96              265
+Korangi                       0.80            0.98              263
+Malir                         0.82            0.99              268
+  Saved no2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\no2
+
+=== O3 (Sentinel-5P: Total O3 column (Dobson Units)) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 88% of grid cells observed
+    2026-02: 28 days, 96% of grid cells observed
+    2026-01: 31 days, 91% of grid cells observed
+    2026-04: 30 days, 91% of grid cells observed
+    2026-03: 31 days, 86% of grid cells observed
+    2026-07: 31 days, 59% of grid cells observed
+    2026-06: 30 days, 83% of grid cells observed    2026-05: 31 days, 97% of grid cells observed
+
+    2026-08: 31 days, 46% of grid cells observed
+    2026-09: 25 days, 71% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.71            0.97              260
+Karachi East                  0.72            0.97              264
+Karachi South                 0.72            0.97              264
+Karachi West                  0.71            0.96              265
+Korangi                       0.74            0.98              263
+Malir                         0.79            0.98              268
+  Saved o3.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\o3
+
+=== SO2 (Sentinel-5P: SO2 column (noisy: values below 0 are normal)) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 87% of grid cells observed
+    2026-01: 31 days, 91% of grid cells observed
+    2026-05: 31 days, 100% of grid cells observed
+    2026-02: 28 days, 96% of grid cells observed
+    2026-04: 30 days, 91% of grid cells observed
+    2026-07: 31 days, 61% of grid cells observed    2026-03: 31 days, 86% of grid cells observed
+
+    2026-06: 30 days, 84% of grid cells observed
+    2026-08: 31 days, 48% of grid cells observed
+    2026-09: 25 days, 76% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.72            0.97              260
+Karachi East                  0.73            0.97              264
+Karachi South                 0.74            0.97              264
+Karachi West                  0.73            0.96              264
+Korangi                       0.75            0.98              263
+Malir                         0.80            0.98              268
+  Saved so2.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\so2
+
+=== CO (Sentinel-5P: CO column) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 60% of grid cells observed
+    2026-01: 31 days, 62% of grid cells observed    2026-03: 31 days, 67% of grid cells observed
+    2026-05: 31 days, 79% of grid cells observed    2026-02: 28 days, 72% of grid cells observed
+
+
+    2026-04: 30 days, 71% of grid cells observed    2026-06: 30 days, 81% of grid cells observed
+
+    2026-07: 31 days, 68% of grid cells observed
+    2026-08: 31 days, 59% of grid cells observed
+    2026-09: 25 days, 71% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.66            1.00              268
+Karachi East                  0.63            1.00              268
+Karachi South                 0.73            1.00              268
+Karachi West                  0.69            1.00              268
+Korangi                       0.69            0.99              267
+Malir                         0.72            1.00              268
+  Saved co.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\co
+
+=== AER_AI (Sentinel-5P: UV absorbing aerosol index (dust/smoke)) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 100% of grid cells observed
+    2026-02: 28 days, 99% of grid cells observed
+    2026-01: 31 days, 100% of grid cells observed
+    2026-07: 31 days, 95% of grid cells observed
+    2026-06: 30 days, 96% of grid cells observed    2026-04: 30 days, 95% of grid cells observed
+    2026-03: 31 days, 96% of grid cells observed
+
+    2026-05: 31 days, 93% of grid cells observed
+    2026-08: 31 days, 95% of grid cells observed
+    2026-09: 25 days, 96% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.99             1.0              268
+Karachi East                  0.99             1.0              268
+Karachi South                 0.99             1.0              268
+Karachi West                  1.00             1.0              268
+Korangi                       1.00             1.0              268
+Malir                         0.99             1.0              268
+  Saved aer_ai.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aer_ai
+
+======================================================================
+  step4_modis_aod.py --start 2026-01-01 --end 2026-09-25
+======================================================================
+
+=== AOD (MODIS MAIAC: Aerosol optical depth at 550 nm (best-quality, clear-sky)) 2026-01-01 -> 2026-09-25 ===
+  Fetching 10 month(s) from Earth Engine ...
+    2025-12: 31 days, 57% of grid cells observed
+    2026-03: 31 days, 49% of grid cells observed
+    2026-02: 28 days, 64% of grid cells observed    2026-01: 31 days, 61% of grid cells observed
+
+    2026-06: 30 days, 31% of grid cells observed
+    2026-07: 31 days, 12% of grid cells observed
+    2026-04: 30 days, 53% of grid cells observed
+    2026-05: 31 days, 64% of grid cells observed
+    2026-08: 31 days, 12% of grid cells observed
+    2026-09: 25 days, 30% of grid cells observed
+  Gap filling (IDW + temporal median) ...
+  Average share of each district covered: observed (raw) vs after gap filling
+                 observed_fraction  valid_fraction  days_with_value
+district                                                           
+Karachi Central               0.53            0.79              223
+Karachi East                  0.50            0.78              235
+Karachi South                 0.42            0.76              246
+Karachi West                  0.51            0.77              230
+Korangi                       0.40            0.75              213
+Malir                         0.52            0.81              262
+  Saved aod.csv and monthly grids in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\satellite\aod
+##### Chunk 5/5 done in 1.0 min #####
+
+======================================================================
+  step5_quality_report.py 
+======================================================================
+Average share of district area per day (all districts, whole period):
+  product   observed    +IDW  +temporal   final  days
+  no2            79%      9%         9%     97%  1729
+  o3             76%     12%         9%     97%  1729
+  so2            77%     11%         9%     97%  1729
+  co             62%     31%         7%    100%  1729
+  aer_ai        100%      0%         0%    100%  1729
+  aod            57%     10%        13%     80%  1729
+
+Figures saved in D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\outputs\figures
+
+======================================================================
+  step7_finalize.py 
+======================================================================
+Final table: 10374 rows x 63 columns, 2022-01-01 -> 2026-09-25, 6 districts
+
+Share of rows by how the *_mean_complete value was obtained (0 direct, 1 last 30 d, 2 last 90 d, 3 empty):
+    no2    o3   so2    co  aer_ai   aod
+0  97.5  97.1  96.9  99.8   100.0  80.3
+1   2.5   2.9   3.1   0.2     0.0  19.4
+2   0.0   0.0   0.0   0.0     0.0   0.3
+
+Saved D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\data\processed\phase2_daily_features.csv and .parquet
+
+======================================================================
+  step8_validate.py 
+======================================================================
+======================================================================
+ PHASE 2 VALIDATION
+======================================================================
+[  ok ] no leftover temporary files
+[  ok ] no stray empty files in the project folder
+[  ok ] quarantined cache files (already re-downloaded)
+[  ok ] all 410 cached months readable and complete
+[  ok ] no2: csv exists
+[  ok ] no2: columns
+[  ok ] no2: no duplicate (date, district) rows
+[  ok ] no2: starts at START_DATE
+[  ok ] no2: every day and district present
+[  ok ] no2: no dates in the future
+[  ok ] no2: district ids/names match Phase 1
+[  ok ] no2: no infinite values
+[  ok ] no2: fractions within [0, 1]
+[  ok ] no2: observed + IDW + temporal = valid
+[  ok ] no2: mean is empty exactly when valid_fraction is 0
+[  ok ] no2: urban_mean empty exactly when mean is empty
+[  ok ] no2: district means in physical range [-100, 3000]
+[  ok ] no2: std is not negative
+[  ok ] no2: one netcdf per month, no extras
+[  ok ] no2: netcdf days unique and complete
+[  ok ] no2: netcdf readable, flags legal, district means equal csv
+[  ok ] o3: csv exists
+[  ok ] o3: columns
+[  ok ] o3: no duplicate (date, district) rows
+[  ok ] o3: starts at START_DATE
+[  ok ] o3: every day and district present
+[  ok ] o3: no dates in the future
+[  ok ] o3: district ids/names match Phase 1
+[  ok ] o3: no infinite values
+[  ok ] o3: fractions within [0, 1]
+[  ok ] o3: observed + IDW + temporal = valid
+[  ok ] o3: mean is empty exactly when valid_fraction is 0
+[  ok ] o3: urban_mean empty exactly when mean is empty
+[  ok ] o3: district means in physical range [100, 600]
+[  ok ] o3: std is not negative
+[  ok ] o3: one netcdf per month, no extras
+[  ok ] o3: netcdf days unique and complete
+[  ok ] o3: netcdf readable, flags legal, district means equal csv
+[  ok ] so2: csv exists
+[  ok ] so2: columns
+[  ok ] so2: no duplicate (date, district) rows
+[  ok ] so2: starts at START_DATE
+[  ok ] so2: every day and district present
+[  ok ] so2: no dates in the future
+[  ok ] so2: district ids/names match Phase 1
+[  ok ] so2: no infinite values
+[  ok ] so2: fractions within [0, 1]
+[  ok ] so2: observed + IDW + temporal = valid
+[  ok ] so2: mean is empty exactly when valid_fraction is 0
+[  ok ] so2: urban_mean empty exactly when mean is empty
+[  ok ] so2: district means in physical range [-1000, 45000]
+[  ok ] so2: std is not negative
+[  ok ] so2: one netcdf per month, no extras
+[  ok ] so2: netcdf days unique and complete
+[  ok ] so2: netcdf readable, flags legal, district means equal csv
+[  ok ] co: csv exists
+[  ok ] co: columns
+[  ok ] co: no duplicate (date, district) rows
+[  ok ] co: starts at START_DATE
+[  ok ] co: every day and district present
+[  ok ] co: no dates in the future
+[  ok ] co: district ids/names match Phase 1
+[  ok ] co: no infinite values
+[  ok ] co: fractions within [0, 1]
+[  ok ] co: observed + IDW + temporal = valid
+[  ok ] co: mean is empty exactly when valid_fraction is 0
+[  ok ] co: urban_mean empty exactly when mean is empty
+[  ok ] co: district means in physical range [0, 150]
+[  ok ] co: std is not negative
+[  ok ] co: one netcdf per month, no extras
+[  ok ] co: netcdf days unique and complete
+[  ok ] co: netcdf readable, flags legal, district means equal csv
+[  ok ] aer_ai: csv exists
+[  ok ] aer_ai: columns
+[  ok ] aer_ai: no duplicate (date, district) rows
+[  ok ] aer_ai: starts at START_DATE
+[  ok ] aer_ai: every day and district present
+[  ok ] aer_ai: no dates in the future
+[  ok ] aer_ai: district ids/names match Phase 1
+[  ok ] aer_ai: no infinite values
+[  ok ] aer_ai: fractions within [0, 1]
+[  ok ] aer_ai: observed + IDW + temporal = valid
+[  ok ] aer_ai: mean is empty exactly when valid_fraction is 0
+[  ok ] aer_ai: urban_mean empty exactly when mean is empty
+[  ok ] aer_ai: district means in physical range [-20, 20]
+[  ok ] aer_ai: std is not negative
+[  ok ] aer_ai: one netcdf per month, no extras
+[  ok ] aer_ai: netcdf days unique and complete
+[  ok ] aer_ai: netcdf readable, flags legal, district means equal csv
+[  ok ] aod: csv exists
+[  ok ] aod: columns
+[  ok ] aod: no duplicate (date, district) rows
+[  ok ] aod: starts at START_DATE
+[  ok ] aod: every day and district present
+[  ok ] aod: no dates in the future
+[  ok ] aod: district ids/names match Phase 1
+[  ok ] aod: no infinite values
+[  ok ] aod: fractions within [0, 1]
+[  ok ] aod: observed + IDW + temporal = valid
+[  ok ] aod: mean is empty exactly when valid_fraction is 0
+[ WARN] aod: urban_mean empty exactly when mean is empty - 11 rows differ
+[  ok ] aod: district means in physical range [-0.1, 5.0]
+[  ok ] aod: std is not negative
+[  ok ] aod: one netcdf per month, no extras
+[  ok ] aod: netcdf days unique and complete
+[  ok ] aod: netcdf readable, flags legal, district means equal csv
+[  ok ] TEMPORAL_FILL_MODE is 'backward'
+[  ok ] leakage test (gap filling uses only past days): synthetic cube
+[  ok ] leakage test (gap filling uses only past days): real no2 2022-03
+[  ok ] leakage test (gap filling uses only past days): real aod 2022-07
+[  ok ] Sentinel-2 daily rows use a strictly earlier, completed month
+[  ok ] Sentinel-2 daily table has no duplicates
+[  ok ] Sentinel-2 has values for every day
+[  ok ] built-up weight period ends before START_DATE
+[  ok ] *_complete columns use only past days (truncation test)
+[  ok ] final table exists (csv + parquet)
+[  ok ] final: rows == days x districts
+[  ok ] final: no duplicate (date, district) rows
+[  ok ] final: parquet matches csv
+[  ok ] final: table ends at the last day of the daily files
+[  ok ] final: no2_mean_complete empty exactly at level 3
+[  ok ] final: no2 rows still empty after 90-day fallback
+[  ok ] final: o3_mean_complete empty exactly at level 3
+[  ok ] final: o3 rows still empty after 90-day fallback
+[  ok ] final: so2_mean_complete empty exactly at level 3
+[  ok ] final: so2 rows still empty after 90-day fallback
+[  ok ] final: co_mean_complete empty exactly at level 3
+[  ok ] final: co rows still empty after 90-day fallback
+[  ok ] final: aer_ai_mean_complete empty exactly at level 3
+[  ok ] final: aer_ai rows still empty after 90-day fallback
+[  ok ] final: aod_mean_complete empty exactly at level 3
+[  ok ] final: aod rows still empty after 90-day fallback
+======================================================================
+ 132 checks: 131 passed, 1 warnings, 0 FAILED
+ report: D:\AQI_USING_SENTINEL_DATA_FOR_KARACHI\outputs\phase2_validation_report.json
+======================================================================
+
+Phase 2 complete and validated.
+EXIT 0

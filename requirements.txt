@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+geopandas
+shapely>=2.0
+pyproj
+pyogrio
+rasterio
+affine
+requests
+matplotlib

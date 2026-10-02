@@ -1,0 +1,26 @@
+# Secrets - API keys, DB URIs, etc. Never commit these.
+credentials.env
+webapp/server/.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+dist/
+
+# Large / regeneratable data - satellite cache, raw downloads, processed feature tables.
+# All of this is rebuilt by the phaseN pipeline scripts (run_phase2.py etc.) and is
+# hundreds of MB to GBs - not suitable for git. outputs/ (small - reports + trained
+# models) and webapp/server/seedData.json (small - the live dashboard snapshot) are kept.
+data/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Claude Code session-local state (not part of the project)
+.claude/

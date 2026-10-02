@@ -1,0 +1,285 @@
+/* Hawa - Karachi satellite AQI forecast. Deliberately single dark theme (matches the reference
+   console aesthetic), so every color is declared directly rather than split into light/dark blocks. */
+:root {
+  color-scheme: dark;
+  --bg: #080b10;
+  --bg-elevated: #0c1119;
+  --surface: #111826;
+  --surface-2: #161f2e;
+  --border: #1f2a3a;
+  --border-soft: #182233;
+  --text: #edf2f8;
+  --text-dim: #8b96a8;
+  --text-faint: #57626f;
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-dim: rgba(45, 212, 191, 0.13);
+
+  --aqi-good: #34d399;
+  --aqi-moderate: #fbbf24;
+  --aqi-usg: #fb923c;
+  --aqi-unhealthy: #f87171;
+  --aqi-vunhealthy: #c084fc;
+  --aqi-hazardous: #dc2626;
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body { background: var(--bg); }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100%; }
+
+::selection { background: var(--accent-dim); color: var(--accent-strong); }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- shell */
+.shell {
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr) 336px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+@media (max-width: 1080px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar-left, .sidebar-right { border: none !important; }
+}
+
+.sidebar-left, .sidebar-right {
+  background: var(--bg-elevated);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.sidebar-left { border-right: 1px solid var(--border-soft); }
+.sidebar-right { border-left: 1px solid var(--border-soft); }
+
+.main {
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------------- brand */
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.05;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-wrap: balance;
+}
+.brand-name .urdu { color: var(--accent); }
+.brand-name .lat { color: var(--text); font-size: 20px; font-weight: 500; opacity: 0.85; }
+.brand-sub {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.section { display: flex; flex-direction: column; gap: 10px; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------------- pills */
+.pill-group { display: flex; flex-direction: column; gap: 8px; }
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  text-align: left;
+}
+.pill:hover { border-color: var(--accent); color: var(--text); }
+.pill.active { border-color: var(--accent); background: var(--accent-dim); color: var(--accent-strong); }
+.pill .pill-date { font-family: var(--font-mono); font-size: 10.5px; opacity: 0.75; }
+
+/* ---------------------------------------------------------------- legend */
+.legend-list { display: flex; flex-direction: column; gap: 7px; }
+.legend-item { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--text-dim); }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legend-range { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; color: var(--text-faint); }
+
+.model-note {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 13px;
+}
+.model-note b { color: var(--text); font-weight: 600; }
+
+.foot-note { font-size: 11px; color: var(--text-faint); line-height: 1.6; margin-top: auto; }
+
+/* ---------------------------------------------------------------- topbar */
+.topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.topbar h1 { font-family: var(--font-display); font-size: 22px; margin: 0; font-weight: 700; text-wrap: balance; }
+.topbar .issue { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+.topbar .issue b { color: var(--accent-strong); }
+
+/* ---------------------------------------------------------------- map card */
+.map-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 18px 14px;
+}
+.map-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.map-card-head .label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.map-wrap { width: 100%; aspect-ratio: 5 / 3; }
+.map-wrap svg { width: 100%; height: 100%; display: block; }
+
+.district-shape {
+  stroke: var(--bg-elevated);
+  stroke-width: 5;
+  cursor: pointer;
+  transition: opacity 0.15s ease, filter 0.15s ease;
+}
+.district-shape:hover { filter: brightness(1.18); }
+.district-shape.selected { stroke: var(--accent); stroke-width: 7; }
+
+.district-marker circle { fill: var(--bg-elevated); stroke: rgba(255,255,255,0.28); stroke-width: 2.5; }
+.district-marker text { font-family: var(--font-mono); font-weight: 600; fill: var(--text); text-anchor: middle; dominant-baseline: central; }
+.district-marker .code { font-family: var(--font-body); font-weight: 600; fill: var(--text-dim); text-anchor: middle; }
+
+.map-caption { font-size: 10.5px; color: var(--text-faint); margin-top: 8px; font-family: var(--font-mono); }
+
+/* ---------------------------------------------------------------- district grid */
+.grid-label { display:flex; align-items:baseline; justify-content:space-between; }
+.district-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  gap: 14px;
+}
+
+.dcard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+.dcard:hover { border-color: var(--border); transform: translateY(-1px); }
+.dcard.selected { border-color: var(--accent); }
+
+.dcard-head { display: flex; align-items: center; gap: 9px; }
+.dcard-head .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.dcard-head h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0; }
+.dcard-head .code-badge {
+  margin-left: auto; font-family: var(--font-mono); font-size: 10px; color: var(--text-faint);
+  border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px;
+}
+
+.day-row { display: flex; gap: 8px; }
+.day-chip {
+  flex: 1;
+  min-width: 0;
+  border-radius: 11px;
+  padding: 9px 6px 8px;
+  text-align: center;
+  border: 1px solid var(--chip-border, var(--border));
+  background: var(--chip-bg, var(--surface-2));
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.day-chip .d-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+.day-chip .d-date { font-family: var(--font-mono); font-size: 9px; color: var(--text-faint); }
+.day-chip .d-aqi { font-family: var(--font-display); font-size: 25px; font-weight: 700; line-height: 1.1; color: var(--chip-color, var(--text)); margin: 1px 0; }
+.day-chip .d-cat { font-size: 9.5px; color: var(--text-dim); line-height: 1.25; min-height: 22px; }
+.day-chip .d-model {
+  margin-top: 2px; align-self: center; font-family: var(--font-mono); font-size: 8.5px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--chip-color, var(--text-dim)); background: rgba(255,255,255,0.06);
+  border-radius: 5px; padding: 2px 6px;
+}
+
+/* ---------------------------------------------------------------- right sidebar */
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.metric-tile {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 13px 14px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.metric-tile .m-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+.metric-tile .m-value { font-family: var(--font-display); font-size: 24px; font-weight: 700; }
+.metric-tile .m-sub { font-size: 11px; color: var(--text-dim); }
+
+.callout {
+  border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(45,212,191,0.32); background: var(--accent-dim);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.callout .c-big { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--accent-strong); }
+.callout .c-sub { font-size: 11.5px; color: var(--text-dim); line-height: 1.4; }
+
+.bd-list { display: flex; flex-direction: column; gap: 11px; }
+.bd-row { display: flex; align-items: center; gap: 10px; }
+.bd-row .bd-name { width: 92px; flex: none; font-size: 12px; color: var(--text-dim); }
+.bd-row .bd-track { flex: 1; height: 7px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.bd-row .bd-fill { height: 100%; border-radius: 4px; }
+.bd-row .bd-val { width: 30px; flex: none; text-align: right; font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+
+.perf-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.perf-table th, .perf-table td { text-align: right; padding: 6px 4px; border-bottom: 1px solid var(--border-soft); }
+.perf-table th:first-child, .perf-table td:first-child { text-align: left; color: var(--text-dim); }
+.perf-table th { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); font-weight: 500; }
+.perf-table td { font-family: var(--font-mono); }
+.perf-table tr:last-child td { border-bottom: none; }
+.perf-table .best { color: var(--accent-strong); font-weight: 600; }
+
+/* ---------------------------------------------------------------- states */
+.center-state {
+  display: flex; align-items: center; justify-content: center; min-height: 100vh; width: 100%;
+  color: var(--text-dim); font-family: var(--font-mono); font-size: 13px; gap: 10px;
+}
+.center-state .err { color: var(--aqi-unhealthy); }
+
+.spin {
+  width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border);
+  border-top-color: var(--accent); animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .spin { animation: none; }
+  .dcard { transition: none; }
+}

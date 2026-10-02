@@ -1,0 +1,849 @@
+{
+  "generated": "2026-10-02T12:56:11",
+  "failures": 1,
+  "warnings": 1,
+  "checks": [
+    {
+      "check": "no leftover temporary files",
+      "status": "PASS",
+      "detail": "0 found, e.g. []"
+    },
+    {
+      "check": "no stray empty files in the project folder",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "quarantined cache files (already re-downloaded)",
+      "status": "PASS",
+      "detail": "0 file(s) in data/cache/gee/_quarantine - safe to delete"
+    },
+    {
+      "check": "all 521 cached months readable and complete",
+      "status": "FAIL",
+      "detail": "[('cams_2021-12.npz', 'content'), ('cams_2022-01.npz', 'content'), ('cams_2022-02.npz', 'content'), ('cams_2022-03.npz', 'content'), ('cams_2022-04.npz', 'content')]"
+    },
+    {
+      "check": "no2: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\no2.csv"
+    },
+    {
+      "check": "no2: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "no2: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "no2: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "no2: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "no2: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "no2: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no2: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no2: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no2: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "no2: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "no2: urban_mean empty exactly when mean is empty",
+      "status": "PASS",
+      "detail": "0 rows differ"
+    },
+    {
+      "check": "no2: district means in physical range [-100, 3000]",
+      "status": "PASS",
+      "detail": "0 outside; min -0.212 max 616"
+    },
+    {
+      "check": "no2: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no2: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "no2: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "no2: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 5.0e-06)"
+    },
+    {
+      "check": "o3: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\o3.csv"
+    },
+    {
+      "check": "o3: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "o3: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "o3: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "o3: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "o3: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "o3: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "o3: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "o3: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "o3: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "o3: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "o3: urban_mean empty exactly when mean is empty",
+      "status": "PASS",
+      "detail": "0 rows differ"
+    },
+    {
+      "check": "o3: district means in physical range [100, 600]",
+      "status": "PASS",
+      "detail": "0 outside; min 231 max 330"
+    },
+    {
+      "check": "o3: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "o3: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "o3: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "o3: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 2.1e-06)"
+    },
+    {
+      "check": "so2: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\so2.csv"
+    },
+    {
+      "check": "so2: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "so2: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "so2: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "so2: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "so2: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "so2: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "so2: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "so2: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "so2: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "so2: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "so2: urban_mean empty exactly when mean is empty",
+      "status": "PASS",
+      "detail": "0 rows differ"
+    },
+    {
+      "check": "so2: district means in physical range [-1000, 45000]",
+      "status": "PASS",
+      "detail": "0 outside; min -752 max 6.28e+03"
+    },
+    {
+      "check": "so2: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "so2: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "so2: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "so2: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 4.9e-06)"
+    },
+    {
+      "check": "co: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\co.csv"
+    },
+    {
+      "check": "co: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "co: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "co: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "co: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "co: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "co: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "co: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "co: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "co: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "co: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "co: urban_mean empty exactly when mean is empty",
+      "status": "PASS",
+      "detail": "0 rows differ"
+    },
+    {
+      "check": "co: district means in physical range [0, 150]",
+      "status": "PASS",
+      "detail": "0 outside; min 23.4 max 65.2"
+    },
+    {
+      "check": "co: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "co: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "co: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "co: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 2.0e-06)"
+    },
+    {
+      "check": "aer_ai: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\aer_ai.csv"
+    },
+    {
+      "check": "aer_ai: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "aer_ai: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "aer_ai: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "aer_ai: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "aer_ai: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "aer_ai: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aer_ai: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aer_ai: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aer_ai: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "aer_ai: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "aer_ai: urban_mean empty exactly when mean is empty",
+      "status": "PASS",
+      "detail": "0 rows differ"
+    },
+    {
+      "check": "aer_ai: district means in physical range [-20, 20]",
+      "status": "PASS",
+      "detail": "0 outside; min -1.99 max 4.88"
+    },
+    {
+      "check": "aer_ai: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aer_ai: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "aer_ai: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "aer_ai: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 4.9e-06)"
+    },
+    {
+      "check": "aod: csv exists",
+      "status": "PASS",
+      "detail": "D:\\AQI_USING_SENTINEL_DATA_FOR_KARACHI\\data\\processed\\district_daily\\aod.csv"
+    },
+    {
+      "check": "aod: columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "aod: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "aod: starts at START_DATE",
+      "status": "PASS",
+      "detail": "2022-01-01 00:00:00"
+    },
+    {
+      "check": "aod: every day and district present",
+      "status": "PASS",
+      "detail": "10410 rows vs 10410"
+    },
+    {
+      "check": "aod: no dates in the future",
+      "status": "PASS",
+      "detail": "2026-10-01 00:00:00"
+    },
+    {
+      "check": "aod: district ids/names match Phase 1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aod: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aod: fractions within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aod: observed + IDW + temporal = valid",
+      "status": "PASS",
+      "detail": "max diff 0.0000"
+    },
+    {
+      "check": "aod: mean is empty exactly when valid_fraction is 0",
+      "status": "PASS",
+      "detail": "0"
+    },
+    {
+      "check": "aod: urban_mean empty exactly when mean is empty",
+      "status": "WARN",
+      "detail": "11 rows differ"
+    },
+    {
+      "check": "aod: district means in physical range [-0.1, 5.0]",
+      "status": "PASS",
+      "detail": "0 outside; min 0.014 max 4.93"
+    },
+    {
+      "check": "aod: std is not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "aod: one netcdf per month, no extras",
+      "status": "PASS",
+      "detail": "58 files"
+    },
+    {
+      "check": "aod: netcdf days unique and complete",
+      "status": "PASS",
+      "detail": "1735 days vs 1735"
+    },
+    {
+      "check": "aod: netcdf readable, flags legal, district means equal csv",
+      "status": "PASS",
+      "detail": "[] (max rel. error 4.9e-06)"
+    },
+    {
+      "check": "TEMPORAL_FILL_MODE is 'backward'",
+      "status": "PASS",
+      "detail": "backward"
+    },
+    {
+      "check": "leakage test (gap filling uses only past days): synthetic cube",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "leakage test (gap filling uses only past days): real no2 2022-03",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "leakage test (gap filling uses only past days): real aod 2022-07",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Sentinel-2 daily rows use a strictly earlier, completed month",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Sentinel-2 daily table has no duplicates",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Sentinel-2 has values for every day",
+      "status": "PASS",
+      "detail": "{'ndvi': 0, 'ndbi': 0, 'built_pct': 0}"
+    },
+    {
+      "check": "built-up weight period ends before START_DATE",
+      "status": "PASS",
+      "detail": "('2021-01', '2021-12')"
+    },
+    {
+      "check": "*_complete columns use only past days (truncation test)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final table exists (csv + parquet)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: rows == days x districts",
+      "status": "PASS",
+      "detail": "10410"
+    },
+    {
+      "check": "final: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: parquet matches csv",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: table ends at the last day of the daily files",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: no2_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: no2 rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    },
+    {
+      "check": "final: o3_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: o3 rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    },
+    {
+      "check": "final: so2_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: so2 rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    },
+    {
+      "check": "final: co_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: co rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    },
+    {
+      "check": "final: aer_ai_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: aer_ai rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    },
+    {
+      "check": "final: aod_mean_complete empty exactly at level 3",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final: aod rows still empty after 90-day fallback",
+      "status": "PASS",
+      "detail": "0.00%"
+    }
+  ],
+  "coverage_summary": {
+    "no2": {
+      "real_observation_share_by_month": {
+        "1": 0.924,
+        "2": 0.899,
+        "3": 0.937,
+        "4": 0.927,
+        "5": 0.959,
+        "6": 0.787,
+        "7": 0.436,
+        "8": 0.298,
+        "9": 0.675,
+        "10": 0.854,
+        "11": 0.946,
+        "12": 0.971
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.7,
+        "7": 0.4,
+        "8": 12.5,
+        "9": 1.1,
+        "10": 2.4,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "o3": {
+      "real_observation_share_by_month": {
+        "1": 0.899,
+        "2": 0.885,
+        "3": 0.911,
+        "4": 0.904,
+        "5": 0.966,
+        "6": 0.727,
+        "7": 0.356,
+        "8": 0.256,
+        "9": 0.629,
+        "10": 0.888,
+        "11": 0.889,
+        "12": 0.961
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.4,
+        "8": 12.0,
+        "9": 1.1,
+        "10": 0.8,
+        "11": 4.2,
+        "12": 0.0
+      }
+    },
+    "so2": {
+      "real_observation_share_by_month": {
+        "1": 0.869,
+        "2": 0.878,
+        "3": 0.914,
+        "4": 0.905,
+        "5": 0.974,
+        "6": 0.746,
+        "7": 0.377,
+        "8": 0.271,
+        "9": 0.644,
+        "10": 0.917,
+        "11": 0.93,
+        "12": 0.933
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.5,
+        "8": 14.1,
+        "9": 1.1,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "co": {
+      "real_observation_share_by_month": {
+        "1": 0.596,
+        "2": 0.615,
+        "3": 0.665,
+        "4": 0.648,
+        "5": 0.658,
+        "6": 0.694,
+        "7": 0.593,
+        "8": 0.471,
+        "9": 0.674,
+        "10": 0.571,
+        "11": 0.584,
+        "12": 0.624
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.6,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "aer_ai": {
+      "real_observation_share_by_month": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.992,
+        "4": 1.0,
+        "5": 0.993,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 0.993,
+        "10": 1.0,
+        "11": 1.0,
+        "12": 0.999
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0
+      }
+    },
+    "aod": {
+      "real_observation_share_by_month": {
+        "1": 0.776,
+        "2": 0.758,
+        "3": 0.771,
+        "4": 0.706,
+        "5": 0.774,
+        "6": 0.337,
+        "7": 0.055,
+        "8": 0.058,
+        "9": 0.324,
+        "10": 0.727,
+        "11": 0.863,
+        "12": 0.87
+      },
+      "days_with_no_district_value_pct_by_month": {
+        "1": 0.8,
+        "2": 1.2,
+        "3": 0.1,
+        "4": 2.4,
+        "5": 0.2,
+        "6": 11.3,
+        "7": 44.3,
+        "8": 51.5,
+        "9": 13.3,
+        "10": 2.0,
+        "11": 0.0,
+        "12": 0.8
+      }
+    }
+  }
+}

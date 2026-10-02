@@ -1,0 +1,6 @@
+Listing location folders ...
+55830 locations, 0 already scanned, 55830 to do
+  probe error: 100 ERROR ConnectionClosedError: Connection was closed before we received a valid response from endpoint URL: "https://opena
+  probe error: 10001 ERROR SSLError: SSL validation failed for https://openaq-data-archive.s3.amazonaws.com/?list-type=2&prefix=records%2Fcsv
+  probe error: 10002 ERROR ConnectionClosedError: Connection was closed before we received a valid response from endpoint URL: "https://opena
+EXIT 127

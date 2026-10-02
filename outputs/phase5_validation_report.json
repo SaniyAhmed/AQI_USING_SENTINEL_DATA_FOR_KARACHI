@@ -1,0 +1,184 @@
+{
+  "generated": "2026-09-27T14:53:13",
+  "failures": 0,
+  "warnings": 0,
+  "checks": [
+    {
+      "check": "coverage: out-of-fold predictions exist for all 7401 target rows, every horizon",
+      "status": "PASS",
+      "detail": "got 7401 rows"
+    },
+    {
+      "check": "zero leakage: no target or identifier column is among the model features",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "zero leakage: every target row has exactly one fold assignment (no duplicate issue_date/district/horizon)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LightGBM beats the persistence baseline overall (RMSE 13.96 vs 19.69, MAE 8.71 vs 11.82)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LightGBM beats persistence on RMSE in every individual horizon (3/3)",
+      "status": "PASS",
+      "detail": "3/3 horizons"
+    },
+    {
+      "check": "XGBoost beats the persistence baseline overall (RMSE 14.02 vs 19.69, MAE 8.75 vs 11.82)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "XGBoost beats persistence on RMSE in every individual horizon (3/3)",
+      "status": "PASS",
+      "detail": "3/3 horizons"
+    },
+    {
+      "check": "feature importance: physically-expected drivers (AOD/PBLH/ventilation/humidity/recent ground PM2.5/CAMS) appear in the top 15: ['g_pm25_city_lag1', 'g_pm25_lag1', 'g_aqi_pm25_lag1', 'g_aqi_pm25_roll3_mean', 'g_pm25_roll3_mean', 'blh_min', 'cams_pm25', 'g_aqi_pm25_roll7_mean', 'vent_mean']",
+      "status": "PASS",
+      "detail": "['td_mean', 'g_pm25_city_lag1', 'doy_cos', 'o3_roll7_mean', 'g_pm25_lag1', 'g_aqi_pm25_lag1', 'g_aqi_pm25_roll3_mean', 'g_pm25_roll3_mean', 'ws_mean', 'blh_min', 'cams_pm25', 'g_aqi_pm25_roll7_mean', 'o3_roll3_mean', 'vent_mean', 'u10_mean']"
+    }
+  ],
+  "metrics": {
+    "0|pred_persistence": {
+      "rmse": 16.355927845923432,
+      "mae": 9.451896959314775,
+      "r2": 0.7322085199519486,
+      "aqi_mae": 12.38372591006424,
+      "aqi_category_accuracy": 0.7948608137044968,
+      "aqi_category_f1_macro": 0.47386085170249853,
+      "n": 2335
+    },
+    "0|pred_lightgbm": {
+      "rmse": 12.670963324562107,
+      "mae": 7.789666690360634,
+      "r2": 0.8404916798931348,
+      "aqi_mae": 10.380624239967572,
+      "aqi_category_accuracy": 0.8435346574787191,
+      "aqi_category_f1_macro": 0.4262761972587974,
+      "n": 2467
+    },
+    "0|pred_xgboost": {
+      "rmse": 12.81032018521939,
+      "mae": 7.87177778596418,
+      "r2": 0.8369638005157748,
+      "aqi_mae": 10.489258208350224,
+      "aqi_category_accuracy": 0.83664369679773,
+      "aqi_category_f1_macro": 0.43176656518418355,
+      "n": 2467
+    },
+    "1|pred_persistence": {
+      "rmse": 20.579019165609324,
+      "mae": 12.474118638149282,
+      "r2": 0.5780818896938726,
+      "aqi_mae": 16.493234395460497,
+      "aqi_category_accuracy": 0.7363596682671323,
+      "aqi_category_f1_macro": 0.35577755566364266,
+      "n": 2291
+    },
+    "1|pred_lightgbm": {
+      "rmse": 14.1889720208735,
+      "mae": 8.894976061366107,
+      "r2": 0.7999834472114069,
+      "aqi_mae": 11.811917308471829,
+      "aqi_category_accuracy": 0.828131333603567,
+      "aqi_category_f1_macro": 0.4202696900026233,
+      "n": 2467
+    },
+    "1|pred_xgboost": {
+      "rmse": 14.30257031540986,
+      "mae": 8.94215132206676,
+      "r2": 0.796767922552883,
+      "aqi_mae": 11.836238346169436,
+      "aqi_category_accuracy": 0.8240778273206324,
+      "aqi_category_f1_macro": 0.408630629593175,
+      "n": 2467
+    },
+    "2|pred_persistence": {
+      "rmse": 21.803941095354336,
+      "mae": 13.613680636604775,
+      "r2": 0.5167909635929798,
+      "aqi_mae": 18.068081343943412,
+      "aqi_category_accuracy": 0.7117595048629531,
+      "aqi_category_f1_macro": 0.31603533178483484,
+      "n": 2262
+    },
+    "2|pred_lightgbm": {
+      "rmse": 14.934827491683313,
+      "mae": 9.440189240850101,
+      "r2": 0.7784026846871674,
+      "aqi_mae": 12.637616538305634,
+      "aqi_category_accuracy": 0.8127280097284151,
+      "aqi_category_f1_macro": 0.372275496107793,
+      "n": 2467
+    },
+    "2|pred_xgboost": {
+      "rmse": 14.87266802693663,
+      "mae": 9.433897490063416,
+      "r2": 0.7802434432393636,
+      "aqi_mae": 12.634373733279286,
+      "aqi_category_accuracy": 0.8098905553303608,
+      "aqi_category_f1_macro": 0.37361757934726053,
+      "n": 2467
+    },
+    "overall|pred_persistence": {
+      "rmse": 19.689303224372896,
+      "mae": 11.823828513356563,
+      "r2": 0.6106188678681674,
+      "aqi_mae": 15.617305458768874,
+      "aqi_category_accuracy": 0.7481126596980255,
+      "aqi_category_f1_macro": 0.38286775419790126,
+      "n": 6888
+    },
+    "overall|pred_lightgbm": {
+      "rmse": 13.963396325009528,
+      "mae": 8.708277330858946,
+      "r2": 0.8062926039305697,
+      "aqi_mae": 11.610052695581679,
+      "aqi_category_accuracy": 0.828131333603567,
+      "aqi_category_f1_macro": 0.407862333734004,
+      "n": 7401
+    },
+    "overall|pred_xgboost": {
+      "rmse": 14.022173810487274,
+      "mae": 8.74927553269812,
+      "r2": 0.8046583887693405,
+      "aqi_mae": 11.653290095932983,
+      "aqi_category_accuracy": 0.8235373598162411,
+      "aqi_category_f1_macro": 0.40620409832201737,
+      "n": 7401
+    }
+  },
+  "top_features": {
+    "td_mean": 0.2293,
+    "g_pm25_city_lag1": 0.1572,
+    "doy_cos": 0.0909,
+    "o3_roll7_mean": 0.0771,
+    "g_pm25_lag1": 0.0286,
+    "g_aqi_pm25_lag1": 0.0266,
+    "g_aqi_pm25_roll3_mean": 0.0242,
+    "g_pm25_roll3_mean": 0.0234,
+    "ws_mean": 0.0184,
+    "blh_min": 0.0182,
+    "cams_pm25": 0.0175,
+    "g_aqi_pm25_roll7_mean": 0.0171,
+    "o3_roll3_mean": 0.0141,
+    "vent_mean": 0.0139,
+    "u10_mean": 0.0126,
+    "wind_steadiness": 0.0118,
+    "blh_mean": 0.0103,
+    "wind_dir_cos": 0.0095,
+    "o3_lag3": 0.0089,
+    "vent_min": 0.0086
+  },
+  "best_model_per_horizon": {
+    "0": "LightGBM",
+    "1": "LightGBM",
+    "2": "XGBoost"
+  }
+}

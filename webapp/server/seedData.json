@@ -1,0 +1,159 @@
+{
+ "issue_date": "2026-10-02",
+ "districts": {
+  "Karachi Central": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 30.9,
+    "aqi": 91,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 26.9,
+    "aqi": 84,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi East": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 28.8,
+    "aqi": 88,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 25.1,
+    "aqi": 81,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi South": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 23.3,
+    "aqi": 77,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 19.7,
+    "aqi": 71,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi West": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 31.7,
+    "aqi": 93,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 29.6,
+    "aqi": 89,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Korangi": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 30.9,
+    "aqi": 91,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 28.3,
+    "aqi": 87,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Malir": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-02",
+    "pm25": 23.8,
+    "aqi": 78,
+    "category": "Moderate",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-03",
+    "pm25": 21.7,
+    "aqi": 74,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ]
+ },
+ "model_stats": {
+  "overall|pred_lightgbm": {
+   "rmse": 13.96,
+   "mae": 8.71,
+   "r2": 0.81,
+   "aqi_mae": 11.61,
+   "aqi_category_accuracy": 0.83,
+   "aqi_category_f1_macro": 0.41,
+   "n": 7401
+  },
+  "overall|pred_xgboost": {
+   "rmse": 14.02,
+   "mae": 8.75,
+   "r2": 0.8,
+   "aqi_mae": 11.65,
+   "aqi_category_accuracy": 0.82,
+   "aqi_category_f1_macro": 0.41,
+   "n": 7401
+  },
+  "overall|pred_persistence": {
+   "rmse": 19.69,
+   "mae": 11.82,
+   "r2": 0.61,
+   "aqi_mae": 15.62,
+   "aqi_category_accuracy": 0.75,
+   "aqi_category_f1_macro": 0.38,
+   "n": 6888
+  }
+ },
+ "best_model_per_horizon": {
+  "0": "LightGBM",
+  "1": "LightGBM",
+  "2": "XGBoost"
+ }
+}

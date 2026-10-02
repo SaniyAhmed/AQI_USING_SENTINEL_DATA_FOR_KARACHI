@@ -1,0 +1,63 @@
+60 sensors to download up to 2026-09-27 00:00 UTC
+  sensor 13368464 (pm25, station 4791924): +45 hours, 9332 saved
+  sensor 13369654 (pm25, station 4793473): +17 hours, 3982 saved
+  sensor 13370571 (pm25, station 4793983): +1 hours, 3811 saved
+  sensor 13377694 (pm25, station 4803209): +22 hours, 1207 saved
+  sensor 23747 (pm25, station 8156): +49 hours, 26417 saved
+  sensor 13378900 (pm25, station 4804767): +49 hours, 4474 saved
+  sensor 10815168 (pm10, station 3089895): +1 hours, 101 saved
+  sensor 11157401 (pm10, station 3213801): +19 hours, 85 saved
+  sensor 10815113 (pm25, station 3089895): +1 hours, 101 saved
+  sensor 11077538 (pm10, station 3182341): +49 hours, 59 saved
+  sensor 11157382 (pm25, station 3213801): +19 hours, 85 saved
+  sensor 11077530 (pm25, station 3182341): +49 hours, 59 saved
+  sensor 13387396 (pm25, station 4814327): +49 hours, 10019 saved
+  sensor 13406419 (pm25, station 4837113): +49 hours, 8945 saved
+  sensor 13406434 (pm25, station 4837117): +49 hours, 6061 saved
+  sensor 13408226 (pm25, station 4838712): +49 hours, 8416 saved
+  sensor 13409122 (pm25, station 4840233): +49 hours, 6160 saved
+  sensor 13381251 (pm25, station 4808325): +9 hours, 5860 saved
+  sensor 13414781 (pm25, station 4847173): +32 hours, 4851 saved
+  sensor 13490916 (pm25, station 4932783): +49 hours, 9126 saved
+  sensor 13533643 (pm25, station 4985886): +49 hours, 8295 saved
+  sensor 13682783 (pm25, station 5188633): +33 hours, 2945 saved
+  sensor 13850279 (pm25, station 5417948): +16 hours, 2578 saved
+  sensor 13388480 (pm25, station 4815820): +2 hours, 5557 saved
+  sensor 7466370 (pm25, station 1894633): +49 hours, 2185 saved
+  sensor 13407059 (pm25, station 4838122): +1 hours, 4279 saved
+  sensor 14671477 (pm25, station 6135302): +40 hours, 6757 saved
+  sensor 7466369 (pm10, station 1894633): +49 hours, 2185 saved
+  sensor 14671496 (pm25, station 6135321): +49 hours, 7077 saved
+  sensor 14671522 (pm25, station 6135347): +48 hours, 4611 saved
+  sensor 14671489 (pm25, station 6135314): +2 hours, 105 saved
+  sensor 14671529 (pm25, station 6135354): +44 hours, 5804 saved
+  sensor 14744851 (pm25, station 6135426): +36 hours, 2311 saved
+  sensor 14721548 (pm25, station 6135443): +6 hours, 1164 saved
+  sensor 13379213 (pm25, station 4805271): +14 hours, 14 saved
+  sensor 14671486 (pm25, station 6135311): +8 hours, 3666 saved
+  sensor 14721008 (pm25, station 6135472): +38 hours, 1944 saved
+  sensor 14686633 (pm25, station 6135505): +33 hours, 1183 saved
+  sensor 14780985 (pm25, station 6135439): +44 hours, 1269 saved
+  sensor 13381836 (pm25, station 4808369): +21 hours, 21 saved
+  sensor 13387131 (pm25, station 4814287): +49 hours, 252 saved
+  sensor 14671473 (pm25, station 6135298): +39 hours, 493 saved
+  sensor 14686623 (pm25, station 6135442): +2 hours, 61 saved
+  sensor 13470590 (pm25, station 4906700): +49 hours, 364 saved
+  sensor 13534804 (pm25, station 4986945): +3 hours, 3 saved
+  sensor 14719908 (pm25, station 6135463): +3 hours, 248 saved
+  sensor 14686637 (pm25, station 6135520): +1 hours, 5 saved
+  sensor 15904590 (pm25, station 6135449): hourly endpoint failed (OpenAQ did not answer for /sensors/15904); daily fallback saved 159 days
+  sensor 16034756 (pm25, station 6318824): hourly endpoint failed (OpenAQ did not answer for /sensors/16034); daily fallback saved 14 days
+  sensor 16719735 (pm25, station 6416741): +3 hours, 10 saved
+  sensor 17658506 (pm25, station 6544882): +49 hours, 221 saved
+  sensor 16034760 (pm25, station 6318828): hourly endpoint failed (OpenAQ did not answer for /sensors/16034); daily fallback saved 139 days
+  sensor 16034765 (pm25, station 6318833): hourly endpoint failed (OpenAQ did not answer for /sensors/16034); daily fallback saved 14 days
+  sensor 16034781 (pm25, station 6318849): hourly endpoint failed (OpenAQ did not answer for /sensors/16034); daily fallback saved 14 days
+  sensor 16242902 (pm25, station 6346773): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 123 days
+  sensor 16242903 (pm25, station 6346774): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 136 days
+  sensor 16242904 (pm25, station 6346775): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 70 days
+  sensor 16242908 (pm25, station 6346779): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 91 days
+  sensor 16242909 (pm25, station 6346780): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 125 days
+  sensor 16242911 (pm25, station 6346782): hourly endpoint failed (OpenAQ did not answer for /sensors/16242); daily fallback saved 31 days
+done
+EXIT 0

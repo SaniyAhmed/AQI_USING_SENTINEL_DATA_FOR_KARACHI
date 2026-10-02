@@ -1,0 +1,177 @@
+{
+  "generated": "2026-09-27T14:29:43",
+  "failures": 0,
+  "warnings": 4,
+  "checks": [
+    {
+      "check": "stations: ids unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "stations: every station is inside (or snapped to) one of the six districts",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "stations: sensor ids unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ground pollutants available: ['pm10', 'pm25']",
+      "status": "WARN",
+      "detail": "NO2 and O3 have NO ground data in Karachi - AQI can only use PM2.5 / PM10"
+    },
+    {
+      "check": "every district has at least 3 stations",
+      "status": "WARN",
+      "detail": "{'Karachi Central': 1, 'Karachi East': 29, 'Karachi South': 21, 'Karachi West': 1, 'Korangi': 1, 'Malir': 3}"
+    },
+    {
+      "check": "hourly: all 49 sensor files readable",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "hourly: no duplicate hours, all on the hour",
+      "status": "PASS",
+      "detail": "dups 0, off-hour 0"
+    },
+    {
+      "check": "station-days: no duplicate (date, sensor)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "station-days: every one has >= 18 valid hours",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "station-days: values within physical limits and not negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "station-days: no dates in the future",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "district-days: no duplicate (date, district, pollutant)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "district-days: min <= mean <= max",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "district-days: n_stations equals the number of station-days behind them",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "station-days from sensors whose hourly endpoint is broken (daily means only, no flat-line check): 10%",
+      "status": "PASS",
+      "detail": "a large share of the data could not be checked hour by hour"
+    },
+    {
+      "check": "station-days recomputed independently from raw hourly data: 60/60 agree",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "AQI: EPA formula reproduces 14 hand-computed values (both PM2.5 2024 bins and PM10)",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "AQI: pm25 sub-index never decreases as concentration rises",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "AQI: pm10 sub-index never decreases as concentration rises",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "AQI: overall = max sub-index, dominant pollutant reported, NaN stays NaN",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: same number of rows as the Phase 3 feature table",
+      "status": "PASS",
+      "detail": "30870 vs 30870"
+    },
+    {
+      "check": "dataset: no duplicate (issue_date, district, horizon)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: target_date = issue_date + horizon",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: all Phase 3 columns unchanged",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: PM2.5 target equals the district mean of the TARGET day",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: aqi_pm25 equals a fresh EPA computation from pm25_target",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: aqi_target >= aqi_pm25 wherever both exist",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset: no target column is among the Phase 3 features",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LEAKAGE: rewriting ground data of the issue day and later leaves every ground-history feature unchanged (8 dates)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "leakage test has teeth: rewriting day D-1 does move the lag-1 features",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ground lag-1 of a random row equals the district mean of day D-1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "coverage: target days per district {'Karachi Central': 236, 'Karachi East': 463, 'Karachi South': 1128, 'Karachi West': 184, 'Korangi': 160, 'Malir': 296}",
+      "status": "PASS",
+      "detail": "some districts have fewer than 150 days with a ground target"
+    },
+    {
+      "check": "coverage: 52% of target rows rest on a single station",
+      "status": "WARN",
+      "detail": "district targets are often one sensor"
+    },
+    {
+      "check": "coverage: first target day per district {'Karachi Central': '2025-06-21', 'Karachi East': '2024-10-03', 'Karachi South': '2022-01-20', 'Karachi West': '2025-06-25', 'Korangi': '2025-11-19', 'Malir': '2025-11-19'}",
+      "status": "WARN",
+      "detail": "several districts have no ground truth before 2024/2025 - long history is one station only"
+    }
+  ]
+}

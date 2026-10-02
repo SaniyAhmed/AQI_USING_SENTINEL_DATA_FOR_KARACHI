@@ -1,0 +1,262 @@
+{
+  "generated": "2026-09-27T14:29:20",
+  "failures": 0,
+  "warnings": 0,
+  "checks": [
+    {
+      "check": "bilinear interpolation reproduces a linear field exactly (ERA5, CAMS, GFS lattices)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5: every day and all 6 districts present",
+      "status": "PASS",
+      "detail": "10524 rows vs 10524"
+    },
+    {
+      "check": "ERA5: covers the feature period",
+      "status": "PASS",
+      "detail": "2021-12-01 -> 2026-09-19"
+    },
+    {
+      "check": "ERA5: values in physical ranges",
+      "status": "PASS",
+      "detail": "{}"
+    },
+    {
+      "check": "ERA5: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5: every day built from 24 hourly fields",
+      "status": "PASS",
+      "detail": "0 empty days"
+    },
+    {
+      "check": "GFS T850: no duplicate (date, district) rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "GFS T850: every day and all 6 districts present",
+      "status": "PASS",
+      "detail": "10434 rows vs 10434"
+    },
+    {
+      "check": "GFS T850: covers the feature period",
+      "status": "PASS",
+      "detail": "2021-12-22 -> 2026-09-25"
+    },
+    {
+      "check": "GFS T850: values in physical ranges",
+      "status": "PASS",
+      "detail": "{}"
+    },
+    {
+      "check": "GFS T850: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "T850 covers every ERA5 day of the feature period",
+      "status": "PASS",
+      "detail": "0 days missing"
+    },
+    {
+      "check": "CAMS: no duplicate (run, lead, district) rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CAMS: one 12Z run for every day, no gaps",
+      "status": "PASS",
+      "detail": "2021-12-20 -> 2026-09-25"
+    },
+    {
+      "check": "CAMS: target_date = run date + 1 + lead",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CAMS: values in physical ranges",
+      "status": "PASS",
+      "detail": "{'aod550': 0, 'dust_aod550': 0, 'pm25': 0, 'pm10': 0}"
+    },
+    {
+      "check": "CAMS: incomplete/missing runs are rare (< 0.5 %)",
+      "status": "PASS",
+      "detail": "0.10%"
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, t2m_mean: r=0.989, mean |diff|=0.13",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, t2m_max: r=0.956, mean |diff|=0.38",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, t2m_min: r=0.985, mean |diff|=0.17",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, ws_mean: r=0.991, mean |diff|=0.15",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, blh_mean: r=0.978, mean |diff|=18.65",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, sp_mean: r=1.000, mean |diff|=2.27",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, rh_mean: r=0.975, mean |diff|=0.63",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "ERA5 (Earth Engine) vs independent ERA5 copy, July 2024, precip_sum: r=0.809, mean |diff|=1.25",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CAMS AOD vs MODIS AOD (6186 well-observed district-days): r=0.64, MODIS/CAMS mean ratio=1.29",
+      "status": "PASS",
+      "detail": "weak agreement - use with care"
+    },
+    {
+      "check": "CAMS covers July-August where MODIS does not (100% of 1860 rows)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: no duplicate (issue_date, district, horizon)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: target_date = issue_date + horizon",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: every district has the same number of rows in each horizon",
+      "status": "PASS",
+      "detail": "{1: {0: 1716, 1: 1715, 2: 1714}, 2: {0: 1716, 1: 1715, 2: 1714}, 3: {0: 1716, 1: 1715, 2: 1714}, 4: {0: 1716, 1: 1715, 2: 1714}, 5: {0: 1716, 1: 1715, 2: 1714}, 6: {0: 1716, 1: 1715, 2: 1714}}"
+    },
+    {
+      "check": "features: later horizons lose only the newest issue days (target-day met not yet available)",
+      "status": "PASS",
+      "detail": "{0: 1716, 1: 1715, 2: 1714}"
+    },
+    {
+      "check": "features: issue dates continuous",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: no infinite values",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: sine/cosine columns within [-1, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: wind steadiness within [0, 1]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: relative humidity x AOD terms are finite and non-negative",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: every column has < 0.1 % empty values",
+      "status": "PASS",
+      "detail": "{}"
+    },
+    {
+      "check": "features: ventilation = boundary layer x wind (hourly product, mean lies between the extremes)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: rows built on provisional satellite days: 0.29% (exclude them from training)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "features: t2m_min <= t2m_mean <= t2m_max",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LEAKAGE: rewriting satellite days >= issue day leaves every satellite feature unchanged (12 dates)",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "LEAKAGE: rewriting CAMS runs started on/after the issue day leaves every CAMS feature unchanged",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LEAKAGE: rewriting meteorology of issue day and later leaves the observed-state lags unchanged",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "LEAKAGE: rewriting meteorology AFTER the target day leaves the target-day features unchanged (all horizons)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "leakage test has teeth: changing day D-1 does change the lag features",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "CAMS run used always started BEFORE the issue day (never a same-day or later run)",
+      "status": "PASS",
+      "detail": "0 rows"
+    },
+    {
+      "check": "cams_run_age_days matches issue_date - run date",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "the newest CAMS run (age 1) is used for all but 0.02% of rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "serving: features_2026-09-27.parquet has exactly the training columns",
+      "status": "PASS",
+      "detail": "set()"
+    },
+    {
+      "check": "serving: 6 districts x 3 horizons",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}
