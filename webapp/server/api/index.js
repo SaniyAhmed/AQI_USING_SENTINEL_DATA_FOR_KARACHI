@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
     console.error("Failed to initialize server:", err);
     res.statusCode = 500;
     res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify({ error: "Server initialization failed." }));
+    res.end(JSON.stringify({ error: "Server initialization failed.", detail: err.message }));
     return;
   }
   app(req, res);

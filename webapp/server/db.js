@@ -14,6 +14,13 @@ async function connectDB() {
     console.log(`MongoDB connected: ${uri}`);
     return;
   }
+  if (process.env.VERCEL) {
+    throw new Error(
+      "MONGODB_URI is not set. Add it as an environment variable on this Vercel project " +
+        "(e.g. a MongoDB Atlas connection string) and redeploy — the in-memory Mongo fallback " +
+        "used for local dev cannot run in a serverless function."
+    );
+  }
   memoryServer = await MongoMemoryServer.create({ instance: { dbName: "karachi_aqi" } });
   const memUri = memoryServer.getUri();
   await mongoose.connect(memUri, { dbName: "karachi_aqi" });
