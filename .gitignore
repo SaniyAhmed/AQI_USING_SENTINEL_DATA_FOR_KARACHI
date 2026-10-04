@@ -16,7 +16,7 @@ dist/
 # All of this is rebuilt by the phaseN pipeline scripts (run_phase2.py etc.) and is
 # hundreds of MB to GBs - not suitable for git. outputs/ (small - reports + trained
 # models) and webapp/server/seedData.json (small - the live dashboard snapshot) are kept.
-data/
+/data/
 
 # OS / editor cruft
 .DS_Store
