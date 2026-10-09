@@ -48,6 +48,23 @@ jobs:
           restore-keys: |
             data-cache-
 
+      # Cache empty (first run, or evicted after 7 idle days): restore the one-off baseline snapshot of
+      # data/ published as the "data-base" release asset, so the steps below only fetch the new days.
+      # If the release doesn't exist yet this prints a warning and the pipeline falls back to a full rebuild.
+      - name: Restore baseline data snapshot if cache was empty
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f data/processed/boundaries/master_bbox.json ]; then
+            if gh release download data-base -p data-base.zip -D "$RUNNER_TEMP"; then
+              unzip -q "$RUNNER_TEMP/data-base.zip" -d .
+              rm "$RUNNER_TEMP/data-base.zip"
+              echo "Restored baseline data/ from release data-base"
+            else
+              echo "::warning::No data-base release found - doing a full rebuild (slow)"
+            fi
+          fi
+
       # Phase 1 outputs (district boundaries, bbox, grid, masks) live in gitignored data/ too, and every
       # later step reads them. Rebuild them only when the cache didn't provide them.
       - name: Build district geometry if missing (Phase 1)

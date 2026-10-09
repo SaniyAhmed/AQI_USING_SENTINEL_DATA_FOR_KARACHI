@@ -24,3 +24,4 @@ Thumbs.db
 
 # Claude Code session-local state (not part of the project)
 .claude/
+data-base.zip
