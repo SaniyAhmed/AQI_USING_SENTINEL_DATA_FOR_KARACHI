@@ -33,7 +33,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
-          pip install earthengine-api python-dotenv pyarrow xarray scikit-learn lightgbm xgboost
+          pip install earthengine-api python-dotenv pyarrow xarray netCDF4 scikit-learn lightgbm xgboost
 
       # data/ (satellite + ground cache) is gitignored (hundreds of MB, rebuilt by the pipeline) so a
       # fresh checkout never has it. Restoring the previous run's copy keeps every step here
