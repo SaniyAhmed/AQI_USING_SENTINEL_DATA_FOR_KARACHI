@@ -78,7 +78,9 @@ def check_hygiene():
 def check_cache(shape):
     bad, n = [], 0
     for path in sorted(config.GEE_CACHE_DIR.glob("*/*.npz")):
-        if path.parent.name == "_quarantine":
+        # cams/ and era5/ are Phase 3 caches (different cube layout, validated by phase3 step7); once
+        # Phase 3 has run they sit next to the Phase 2 product caches and must not be judged by them.
+        if path.parent.name in ("_quarantine", "cams", "era5"):
             continue
         n += 1
         try:
