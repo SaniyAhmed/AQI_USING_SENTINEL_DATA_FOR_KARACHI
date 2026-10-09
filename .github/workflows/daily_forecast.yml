@@ -48,6 +48,16 @@ jobs:
           restore-keys: |
             data-cache-
 
+      # Phase 1 outputs (district boundaries, bbox, grid, masks) live in gitignored data/ too, and every
+      # later step reads them. Rebuild them only when the cache didn't provide them.
+      - name: Build district geometry if missing (Phase 1)
+        run: |
+          if [ ! -f data/processed/boundaries/master_bbox.json ]; then
+            python phase1_geometry/step1_download_boundaries.py
+            python phase1_geometry/step2_prepare_districts.py
+            python phase1_geometry/step3_build_grid_and_masks.py
+          fi
+
       # predict_today.py needs the satellite table through yesterday, ground data through yesterday,
       # and today's live GFS/CAMS feature row - none of which exist yet after just a checkout, so these
       # three pipeline steps have to run before it every morning (see data/README context in chat).
