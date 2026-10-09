@@ -40,12 +40,24 @@ def init_ee():
             "    GEE_PROJECT=your-cloud-project-id\n"
             f"to {config.CREDENTIALS_FILE} (see the Phase 2 guide)."
         )
-    sa_json = os.getenv("GEE_SERVICE_ACCOUNT_JSON")
+    sa_json = (os.getenv("GEE_SERVICE_ACCOUNT_JSON") or "").strip()
+    if not sa_json and os.getenv("CI"):
+        # Never fall through to ee.Authenticate() on a CI runner - there is no browser, it just
+        # dies with "gcloud failed". An empty value means the GitHub secret is missing/misnamed.
+        raise SystemExit(
+            "GEE_SERVICE_ACCOUNT_JSON is empty in CI. Create a repository secret with exactly "
+            "that name (Settings -> Secrets and variables -> Actions) containing the full "
+            "service-account key JSON."
+        )
     if sa_json:
-        info = json.loads(sa_json)
-        credentials = ee.ServiceAccountCredentials(info["client_email"], key_data=sa_json)
-        ee.Initialize(credentials, project=project)
-        return
+        try:
+            info = json.loads(sa_json)
+            email = info["client_email"]
+        except (ValueError, KeyError) as err:
+            raise SystemExit(f"GEE_SERVICE_ACCOUNT_JSON is not a valid service-account key JSON: {err!r}")
+        ee.Initialize(ee.ServiceAccountCredentials(email, key_data=sa_json), project=project)
+        ee.data.setDeadline(config.GEE_HTTP_TIMEOUT_S * 1000)
+        return project
     for attempt in range(6):
         try:
             ee.Initialize(project=project)
