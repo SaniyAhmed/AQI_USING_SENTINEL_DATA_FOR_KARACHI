@@ -1,0 +1,85 @@
+name: Daily AQI forecast
+
+# 6:00 AM PKT = 01:00 UTC (Pakistan has no DST, so this offset is fixed year-round).
+# GitHub's cron scheduler can run a few minutes late under load - that's normal.
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch: {} # lets you trigger a run manually from the Actions tab, e.g. to bootstrap the cache
+
+concurrency:
+  group: daily-forecast
+  cancel-in-progress: false
+
+permissions:
+  contents: write # needed to commit the refreshed webapp/server/seedData.json back to the repo
+
+env:
+  GEE_PROJECT: ${{ secrets.GEE_PROJECT }}
+  GEE_SERVICE_ACCOUNT_JSON: ${{ secrets.GEE_SERVICE_ACCOUNT_JSON }}
+  OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install earthengine-api python-dotenv pyarrow xarray scikit-learn lightgbm xgboost
+
+      # data/ (satellite + ground cache) is gitignored (hundreds of MB, rebuilt by the pipeline) so a
+      # fresh checkout never has it. Restoring the previous run's copy keeps every step here
+      # INCREMENTAL (yesterday's new day only) instead of re-pulling the full history from 2022.
+      # The very first run ever (no cache to restore) will be slow and must build that history once -
+      # see the chat notes for how to seed it ahead of time instead of waiting on a 6 AM cron.
+      - name: Restore data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data
+          key: data-cache-${{ github.run_id }}
+          restore-keys: |
+            data-cache-
+
+      # predict_today.py needs the satellite table through yesterday, ground data through yesterday,
+      # and today's live GFS/CAMS feature row - none of which exist yet after just a checkout, so these
+      # three pipeline steps have to run before it every morning (see data/README context in chat).
+      - name: Refresh satellite data (Phase 2, through yesterday)
+        run: python phase2_ingestion/run_phase2.py
+
+      - name: Refresh ground-truth data (Phase 4)
+        run: |
+          python phase4_ground/step2_download.py
+          python phase4_ground/step3_qc_daily.py
+
+      - name: Build today's live forecast features (Phase 3)
+        run: python phase3_features/step5_gfs_forecast.py
+
+      - name: Predict today + tomorrow's AQI (Phase 5)
+        run: python phase5_models/predict_today.py
+
+      - name: Export forecast for the webapp dashboard
+        run: python phase5_models/export_webapp_data.py
+
+      - name: Save data cache
+        if: always() # keep whatever progress was made even if a later step above failed
+        uses: actions/cache/save@v4
+        with:
+          path: data
+          key: data-cache-${{ github.run_id }}
+
+      - name: Commit updated forecast data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add webapp/server/seedData.json
+          git diff --cached --quiet || git commit -m "Daily forecast update: $(date -u +%Y-%m-%d)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push

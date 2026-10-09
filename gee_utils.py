@@ -25,7 +25,13 @@ import config
 
 
 def init_ee():
-    """Initialise Earth Engine with the project id from credentials.env."""
+    """Initialise Earth Engine with the project id from credentials.env.
+
+    Headless use (the daily GitHub Actions forecast): if GEE_SERVICE_ACCOUNT_JSON is set (the full
+    service-account key JSON, as an environment variable / GitHub secret - never committed), it is
+    used directly and no browser is needed. Local/interactive use is unchanged: ee.Authenticate()
+    opens a browser once and caches the OAuth token under ~/.config/earthengine.
+    """
     load_dotenv(config.CREDENTIALS_FILE)
     project = os.getenv("GEE_PROJECT")
     if not project:
@@ -34,6 +40,12 @@ def init_ee():
             "    GEE_PROJECT=your-cloud-project-id\n"
             f"to {config.CREDENTIALS_FILE} (see the Phase 2 guide)."
         )
+    sa_json = os.getenv("GEE_SERVICE_ACCOUNT_JSON")
+    if sa_json:
+        info = json.loads(sa_json)
+        credentials = ee.ServiceAccountCredentials(info["client_email"], key_data=sa_json)
+        ee.Initialize(credentials, project=project)
+        return
     for attempt in range(6):
         try:
             ee.Initialize(project=project)
