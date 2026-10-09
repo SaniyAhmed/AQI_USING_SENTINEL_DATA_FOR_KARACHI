@@ -108,5 +108,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add webapp/server/seedData.json
           git diff --cached --quiet || git commit -m "Daily forecast update: $(date -u +%Y-%m-%d)"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
