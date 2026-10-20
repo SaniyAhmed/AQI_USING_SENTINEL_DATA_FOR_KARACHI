@@ -1,112 +1,12 @@
 {
- "issue_date": "2026-10-19",
+ "issue_date": "2026-10-20",
  "districts": {
   "Karachi Central": [
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 58.6,
-    "aqi": 153,
-    "category": "Unhealthy",
-    "model": "LightGBM"
-   },
-   {
-    "horizon": 1,
-    "label": "Tomorrow",
     "date": "2026-10-20",
-    "pm25": 56.0,
-    "aqi": 151,
-    "category": "Unhealthy",
-    "model": "LightGBM"
-   }
-  ],
-  "Karachi East": [
-   {
-    "horizon": 0,
-    "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 53.3,
-    "aqi": 145,
-    "category": "Unhealthy for Sensitive Groups",
-    "model": "LightGBM"
-   },
-   {
-    "horizon": 1,
-    "label": "Tomorrow",
-    "date": "2026-10-20",
-    "pm25": 48.5,
-    "aqi": 133,
-    "category": "Unhealthy for Sensitive Groups",
-    "model": "LightGBM"
-   }
-  ],
-  "Karachi South": [
-   {
-    "horizon": 0,
-    "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 55.4,
-    "aqi": 150,
-    "category": "Unhealthy for Sensitive Groups",
-    "model": "LightGBM"
-   },
-   {
-    "horizon": 1,
-    "label": "Tomorrow",
-    "date": "2026-10-20",
-    "pm25": 48.8,
-    "aqi": 134,
-    "category": "Unhealthy for Sensitive Groups",
-    "model": "LightGBM"
-   }
-  ],
-  "Karachi West": [
-   {
-    "horizon": 0,
-    "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 61.0,
-    "aqi": 155,
-    "category": "Unhealthy",
-    "model": "LightGBM"
-   },
-   {
-    "horizon": 1,
-    "label": "Tomorrow",
-    "date": "2026-10-20",
-    "pm25": 62.1,
-    "aqi": 156,
-    "category": "Unhealthy",
-    "model": "LightGBM"
-   }
-  ],
-  "Korangi": [
-   {
-    "horizon": 0,
-    "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 55.6,
-    "aqi": 151,
-    "category": "Unhealthy",
-    "model": "LightGBM"
-   },
-   {
-    "horizon": 1,
-    "label": "Tomorrow",
-    "date": "2026-10-20",
-    "pm25": 51.3,
-    "aqi": 140,
-    "category": "Unhealthy for Sensitive Groups",
-    "model": "LightGBM"
-   }
-  ],
-  "Malir": [
-   {
-    "horizon": 0,
-    "label": "Today",
-    "date": "2026-10-19",
-    "pm25": 56.9,
+    "pm25": 57.1,
     "aqi": 152,
     "category": "Unhealthy",
     "model": "LightGBM"
@@ -114,9 +14,109 @@
    {
     "horizon": 1,
     "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 37.2,
+    "aqi": 105,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi East": [
+   {
+    "horizon": 0,
+    "label": "Today",
     "date": "2026-10-20",
-    "pm25": 52.7,
-    "aqi": 143,
+    "pm25": 52.2,
+    "aqi": 142,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 35.0,
+    "aqi": 99,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi South": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-20",
+    "pm25": 49.8,
+    "aqi": 136,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 34.5,
+    "aqi": 98,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Karachi West": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-20",
+    "pm25": 59.2,
+    "aqi": 154,
+    "category": "Unhealthy",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 45.8,
+    "aqi": 126,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   }
+  ],
+  "Korangi": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-20",
+    "pm25": 53.1,
+    "aqi": 144,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 34.8,
+    "aqi": 99,
+    "category": "Moderate",
+    "model": "LightGBM"
+   }
+  ],
+  "Malir": [
+   {
+    "horizon": 0,
+    "label": "Today",
+    "date": "2026-10-20",
+    "pm25": 53.0,
+    "aqi": 144,
+    "category": "Unhealthy for Sensitive Groups",
+    "model": "LightGBM"
+   },
+   {
+    "horizon": 1,
+    "label": "Tomorrow",
+    "date": "2026-10-21",
+    "pm25": 39.6,
+    "aqi": 111,
     "category": "Unhealthy for Sensitive Groups",
     "model": "LightGBM"
    }
