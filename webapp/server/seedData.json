@@ -1,22 +1,22 @@
 {
- "issue_date": "2026-11-23",
+ "issue_date": "2026-11-24",
  "districts": {
   "Karachi Central": [
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 84.7,
-    "aqi": 171,
+    "date": "2026-11-24",
+    "pm25": 105.5,
+    "aqi": 186,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 105.5,
-    "aqi": 186,
+    "date": "2026-11-25",
+    "pm25": 82.6,
+    "aqi": 170,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
@@ -25,18 +25,18 @@
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 78.5,
-    "aqi": 167,
+    "date": "2026-11-24",
+    "pm25": 108.9,
+    "aqi": 188,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 103.5,
-    "aqi": 185,
+    "date": "2026-11-25",
+    "pm25": 83.0,
+    "aqi": 170,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
@@ -45,18 +45,18 @@
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 83.0,
-    "aqi": 170,
+    "date": "2026-11-24",
+    "pm25": 113.3,
+    "aqi": 191,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 105.4,
-    "aqi": 186,
+    "date": "2026-11-25",
+    "pm25": 77.3,
+    "aqi": 166,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
@@ -65,18 +65,18 @@
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 90.7,
-    "aqi": 176,
+    "date": "2026-11-24",
+    "pm25": 117.5,
+    "aqi": 194,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 112.5,
-    "aqi": 191,
+    "date": "2026-11-25",
+    "pm25": 93.3,
+    "aqi": 177,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
@@ -85,18 +85,18 @@
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 79.7,
-    "aqi": 168,
+    "date": "2026-11-24",
+    "pm25": 110.0,
+    "aqi": 189,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 105.6,
-    "aqi": 186,
+    "date": "2026-11-25",
+    "pm25": 80.5,
+    "aqi": 168,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
@@ -105,18 +105,18 @@
    {
     "horizon": 0,
     "label": "Today",
-    "date": "2026-11-23",
-    "pm25": 76.6,
-    "aqi": 166,
+    "date": "2026-11-24",
+    "pm25": 102.1,
+    "aqi": 184,
     "category": "Unhealthy",
     "model": "LightGBM"
    },
    {
     "horizon": 1,
     "label": "Tomorrow",
-    "date": "2026-11-24",
-    "pm25": 96.7,
-    "aqi": 180,
+    "date": "2026-11-25",
+    "pm25": 81.7,
+    "aqi": 169,
     "category": "Unhealthy",
     "model": "LightGBM"
    }
